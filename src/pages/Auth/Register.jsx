@@ -37,7 +37,7 @@ const Register = () => {
   const onSubmit = async (data) => {
     console.log(data);
     await createUserWithEmailAndPassword(data.email, data.password);
-    await updateProfile({ displayName: data.username });
+    await updateProfile({ displayName: data.name });
     console.log("update done");
   };
   //loading
@@ -61,13 +61,13 @@ const Register = () => {
           {/* email field */}
           <div class="form-control">
             <label class="label">
-              <span class="label-text w-full max-w-xs">Username</span>
+              <span class="label-text w-full max-w-xs">Full Name</span>
             </label>
             <input
-              {...register("username", {
+              {...register("name", {
                 required: {
                   value: true,
-                  message: "username is required",
+                  message: "name is required",
                 },
               })}
               type="text"
@@ -75,9 +75,9 @@ const Register = () => {
               class="input input-bordered w-full max-w-xs lg:w-[350px]"
             />
             <label class="label">
-              {errors.username?.type === "required" && (
+              {errors.name?.type === "required" && (
                 <span class="label-text-alt text-error">
-                  {errors.username.message}
+                  {errors.name.message}
                 </span>
               )}
             </label>
