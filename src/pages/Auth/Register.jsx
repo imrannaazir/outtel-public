@@ -4,14 +4,21 @@ import {
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import loginImage from "../../assets/images/login.png";
 import { auth } from "../../firebase.init";
+import useToken from "../../hooks/useToken";
 const Register = () => {
+  const navigate = useNavigate();
+  // useCreateWith email and pass
   const [createUserWithEmailAndPassword, eUser, eLoading, eError] =
     useCreateUserWithEmailAndPassword(auth);
-
+  // profile update
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+  //token
+  const [token] = useToken(eUser);
+
+  //hook form
   const {
     register,
     watch,
@@ -19,14 +26,26 @@ const Register = () => {
     handleSubmit,
   } = useForm({ mode: onchange });
 
+  // watch pass
   const password = watch("password");
+
+  // form handle
   const onSubmit = async (data) => {
     console.log(data);
     await createUserWithEmailAndPassword(data.email, data.password);
-    await updateProfile({ displayName: data.name });
+    await updateProfile({ displayName: data.username });
     console.log("update done");
   };
+  //loading
   if (updating || eLoading) return <p>Loading...</p>;
+  //error
+  if (updateError || eError) {
+    console.log(updateError || eError);
+  }
+  //token = navigate
+  if (token) {
+    navigate("/");
+  }
 
   return (
     <div className="flex items-center justify-center gap-4 bg-base-200 min-h-screen pt-[80px]">

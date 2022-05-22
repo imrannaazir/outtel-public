@@ -18,7 +18,6 @@ const useToken = (user) => {
       })();
     }
   }, [user]);
-  console.log(token);
   return [token];
 };
 

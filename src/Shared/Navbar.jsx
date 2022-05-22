@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import userImg from "../../src/assets/images/user.jpg";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../firebase.init";
+import { signOut } from "firebase/auth";
 
 const Navbar = ({ children }) => {
   const location = useLocation();
   const [path, setPath] = useState(false);
-  const user = true;
+  const [user, loading] = useAuthState(auth);
+  console.log(user);
 
   useEffect(() => {
     if (location.pathname.includes("dashboard")) {
@@ -14,6 +18,7 @@ const Navbar = ({ children }) => {
       setPath(false);
     }
   }, [location.pathname]);
+  if (loading) return <p>Loading...</p>;
   const navElement = (
     <div className=" lg:flex gap-4">
       <li>
@@ -64,7 +69,12 @@ const Navbar = ({ children }) => {
               Dashboard
             </a>
 
-            <button class="btn gap-2 ">
+            <button
+              onClick={() => {
+                signOut(auth);
+              }}
+              class="btn gap-2 "
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-6 w-6"

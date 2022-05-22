@@ -1,8 +1,17 @@
 import React from "react";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import loginImage from "../../assets/images/login.png";
+import { auth } from "../../firebase.init";
+import useToken from "../../hooks/useToken";
 const Login = () => {
+  const navigate = useNavigate();
+  // sign in with email and pass
+  const [signInWithEmailAndPassword, eUser, eLoading, eError] =
+    useSignInWithEmailAndPassword(auth);
+  const [token] = useToken(eUser);
+
   const {
     register,
     formState: { errors },
@@ -11,8 +20,15 @@ const Login = () => {
 
   const onSubmit = (data) => {
     console.log(data);
+    signInWithEmailAndPassword(data.email, data.password);
   };
-
+  if (eLoading) return <p>Loading..</p>;
+  if (eError) {
+    console.log(eError);
+  }
+  if (token) {
+    navigate("/");
+  }
   return (
     <div class="flex justify-center items-center min-h-screen bg-base-200">
       <div class="hero-content flex-col lg:flex-row-reverse">
