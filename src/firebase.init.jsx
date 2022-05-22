@@ -1,5 +1,28 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp, getAuth } from "firebase/app";
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAB4dU_nCZEyyADzabVtfRBHerJKMUlFO4",
+  authDomain: "outtel-tech.firebaseapp.com",
+  projectId: "outtel-tech",
+  storageBucket: "outtel-tech.appspot.com",
+  messagingSenderId: "650728865938",
+  appId: "1:650728865938:web:ec27e9cfc32e40b77a264b",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
+
+/* 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -16,3 +39,4 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+ */

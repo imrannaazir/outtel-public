@@ -1,9 +1,35 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Parts from './pages/AllParts/Parts';
+import RequiredAuth from './pages/Auth/RequiredAuth';
+import Blogs from './pages/Blogs/Blogs';
+import Dashboard from './pages/Dashboard/Dashboard';
+import Home from './pages/Home/Home';
+import Portfolio from './pages/Portfolio/Portfolio';
+import Navbar from './Shared/Navbar';
 
 function App() {
   return (
     <div>
-      <button className='btn btn-primary'>hello world</button>
+      <Navbar>
+        <Routes>
+          {/* root or public route */}
+          <Route path='/' element={<Home />} />
+          <Route path='/parts' element={<Parts />} />
+          <Route path='/blogs' element={<Blogs />} />
+          <Route path='/portfolio' element={<Portfolio />} />
+
+          {/* privet auth */}
+          <Route element={<RequiredAuth />}>
+            <Route path='/dashboard' element={<Dashboard />} />
+
+          </Route>
+          {/* admin route */}
+          {/*  <Route element={<AdminAuth/>}>
+
+       </Route> */}
+        </Routes>
+      </Navbar>
     </div>
   );
 }
