@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import loginImage from "../../assets/images/login.png";
 import { auth } from "../../firebase.init";
 import useToken from "../../hooks/useToken";
+import Loading from "../../Shared/Loading";
 const Login = () => {
   const navigate = useNavigate();
   // sign in with email and pass
@@ -22,7 +23,7 @@ const Login = () => {
     console.log(data);
     signInWithEmailAndPassword(data.email, data.password);
   };
-  if (eLoading) return <p>Loading..</p>;
+  if (eLoading) return <Loading />;
   if (eError) {
     console.log(eError);
   }

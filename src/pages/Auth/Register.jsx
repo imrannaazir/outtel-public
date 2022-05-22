@@ -8,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import loginImage from "../../assets/images/login.png";
 import { auth } from "../../firebase.init";
 import useToken from "../../hooks/useToken";
+import Loading from "../../Shared/Loading";
 const Register = () => {
   const navigate = useNavigate();
   // useCreateWith email and pass
@@ -37,7 +38,7 @@ const Register = () => {
     console.log("update done");
   };
   //loading
-  if (updating || eLoading) return <p>Loading...</p>;
+  if (updating || eLoading) return <Loading />;
   //error
   if (updateError || eError) {
     console.log(updateError || eError);

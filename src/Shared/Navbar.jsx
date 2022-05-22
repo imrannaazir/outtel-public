@@ -4,6 +4,7 @@ import userImg from "../../src/assets/images/user.jpg";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase.init";
 import { signOut } from "firebase/auth";
+import Loading from "./Loading";
 
 const Navbar = ({ children }) => {
   const location = useLocation();
@@ -18,7 +19,7 @@ const Navbar = ({ children }) => {
       setPath(false);
     }
   }, [location.pathname]);
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loading />;
   const navElement = (
     <div className=" lg:flex gap-4">
       <li>
@@ -72,6 +73,7 @@ const Navbar = ({ children }) => {
             <button
               onClick={() => {
                 signOut(auth);
+                localStorage.removeItem("accessToken");
               }}
               class="btn gap-2 "
             >
