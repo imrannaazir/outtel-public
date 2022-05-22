@@ -21,7 +21,7 @@ const Login = () => {
         <div class="card flex-shrink-0 w-full lg:max-w-sm shadow-2xl bg-base-100">
           {/* form */}
           <form onSubmit={handleSubmit(onSubmit)} class="card-body">
-            <p>Login</p>
+            <p className="text-center text-lg text-primary font-bold">Login</p>
 
             {/* email field */}
             <div class="form-control">
@@ -101,6 +101,10 @@ const Login = () => {
               </p>
             </div>
           </form>
+          <div className="divider w-full max-w-xs mx-auto">Or</div>
+          <button className="btn btn-outline btn-primary w-full max-w-xs mx-auto mb-6 ">
+            Continue with Google
+          </button>
         </div>
       </div>
     </div>
