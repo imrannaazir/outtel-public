@@ -36,7 +36,7 @@ const Analysis = () => {
     },
   ];
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-4 m-6 ">
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 m-6 mt-24">
       {infos.map((info) => (
         <>
           <div
