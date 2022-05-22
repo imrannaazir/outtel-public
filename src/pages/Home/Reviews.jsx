@@ -9,12 +9,12 @@ import "swiper/css/pagination";
 
 import "./styles.css";
 // import required modules
-import { EffectCoverflow, Pagination } from "swiper";
+import { EffectCoverflow, Autoplay } from "swiper";
 import Review from "./Review";
 const Reviews = () => {
   const reviews = ["1", "2", "3", "4", "5", "6"];
   return (
-    <>
+    <div className="">
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
@@ -23,13 +23,17 @@ const Reviews = () => {
         coverflowEffect={{
           rotate: 0,
           stretch: 0,
-          depth: 120,
+          depth: 100,
           modifier: 2,
           slideShadows: true,
         }}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+        }}
         loop={true}
-        modules={[EffectCoverflow, Pagination]}
-        className="mySwiper"
+        modules={[EffectCoverflow, Autoplay]}
+        className="mySwiper "
       >
         {reviews.map((review) => (
           <SwiperSlide>
@@ -37,7 +41,7 @@ const Reviews = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </>
+    </div>
   );
 };
 

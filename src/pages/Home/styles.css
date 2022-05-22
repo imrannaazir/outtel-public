@@ -25,7 +25,7 @@ body {
 .swiper-slide {
   background-position: center;
   background-size: cover;
-  filter: blur(6px);
+  filter: blur(4px);
 }
 
 .swiper-slide img {
