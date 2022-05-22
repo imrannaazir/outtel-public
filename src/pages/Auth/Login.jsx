@@ -1,5 +1,8 @@
 import React from "react";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useSignInWithEmailAndPassword,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import loginImage from "../../assets/images/login.png";
@@ -11,7 +14,12 @@ const Login = () => {
   // sign in with email and pass
   const [signInWithEmailAndPassword, eUser, eLoading, eError] =
     useSignInWithEmailAndPassword(auth);
-  const [token] = useToken(eUser);
+
+  //sign in with google
+  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+
+  //token
+  const [token] = useToken(eUser || gUser);
 
   const {
     register,
@@ -23,8 +31,8 @@ const Login = () => {
     console.log(data);
     signInWithEmailAndPassword(data.email, data.password);
   };
-  if (eLoading) return <Loading />;
-  if (eError) {
+  if (eLoading || gLoading) return <Loading />;
+  if (eError || gError) {
     console.log(eError);
   }
   if (token) {
@@ -119,7 +127,10 @@ const Login = () => {
             </div>
           </form>
           <div className="divider w-full max-w-xs mx-auto">Or</div>
-          <button className="btn btn-outline btn-primary w-full max-w-xs mx-auto mb-6 ">
+          <button
+            onClick={() => signInWithGoogle()}
+            className="btn btn-outline btn-primary w-full max-w-xs mx-auto mb-6 "
+          >
             Continue with Google
           </button>
         </div>

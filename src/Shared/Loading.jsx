@@ -3,7 +3,7 @@ import loadingIMG from "../assets/images/loading.gif";
 const Loading = () => {
   return (
     <div className="min-h-screen w-full flex justify-center items-center">
-      <img src={loadingIMG} alt="Loading" />
+      <img className="w-80" src={loadingIMG} alt="Loading" />
     </div>
   );
 };

@@ -48,6 +48,7 @@ const Navbar = ({ children }) => {
           <label tabindex="0">
             <div class="avatar online mt-2">
               <div class="w-8 rounded-full">
+                {console.log(user?.photoURL)}
                 <img src={user?.photoURL || userImg} alt="" />
               </div>
             </div>

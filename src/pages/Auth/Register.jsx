@@ -1,6 +1,7 @@
 import React from "react";
 import {
   useCreateUserWithEmailAndPassword,
+  useSignInWithGoogle,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
@@ -16,8 +17,10 @@ const Register = () => {
     useCreateUserWithEmailAndPassword(auth);
   // profile update
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+  //sign in with google
+  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   //token
-  const [token] = useToken(eUser);
+  const [token] = useToken(eUser || gUser);
 
   //hook form
   const {
@@ -38,10 +41,10 @@ const Register = () => {
     console.log("update done");
   };
   //loading
-  if (updating || eLoading) return <Loading />;
+  if (updating || eLoading || gLoading) return <Loading />;
   //error
   if (updateError || eError) {
-    console.log(updateError || eError);
+    console.log(updateError || eError || gError);
   }
   //token = navigate
   if (token) {
@@ -190,7 +193,10 @@ const Register = () => {
           </div>
         </form>
         <div className="divider">OR</div>
-        <button class="btn btn-outline btn-primary btn-block">
+        <button
+          onClick={() => signInWithGoogle()}
+          class="btn btn-outline btn-primary btn-block"
+        >
           Continue with Google
         </button>
       </div>
