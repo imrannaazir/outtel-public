@@ -15,7 +15,7 @@ const Navbar = ({ children }) => {
     }
   }, [location.pathname]);
   const navElement = (
-    <div className=" flex gap-4">
+    <div className=" lg:flex gap-4">
       <li>
         <NavLink className="rounded-lg" to="/">
           Home
@@ -38,7 +38,7 @@ const Navbar = ({ children }) => {
       </li>
 
       {user ? (
-        <div class="dropdown dropdown-end dropdown-hover">
+        <div class="dropdown lg:dropdown-end dropdown-hover">
           <label tabindex="0">
             <div class="avatar online mt-2">
               <div class="w-8 rounded-full">
