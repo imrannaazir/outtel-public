@@ -48,7 +48,7 @@ const Analysis = () => {
               icon={info.logo}
             />
             <span className="text-3xl text-primary">
-              <CountUp duration={5} end={info.quantity} />
+              <CountUp duration={5} end={info.quantity} delay={2} />
               <span>+</span>
             </span>
             <p className="text-xl text-black">{info.name}</p>
