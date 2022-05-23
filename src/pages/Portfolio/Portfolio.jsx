@@ -1,4 +1,5 @@
 import React from "react";
+import CareerObj from "./CareerObj";
 import MyDetails from "./MyDetails";
 import PortfolioBanner from "./PortfolioBanner";
 
@@ -7,6 +8,7 @@ const Portfolio = () => {
     <div>
       <PortfolioBanner />
       <MyDetails />
+      <CareerObj />
     </div>
   );
 };

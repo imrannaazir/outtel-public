@@ -4,7 +4,7 @@ const CareerObj = () => {
   return (
     <div class="hero min-h-screen bg-base-200">
       <div class="hero-content flex-col lg:flex-row">
-        <img src={career} alt="" />
+        <img src={career} className="w-[50%]" alt="" />
         <div>
           <h1 class="text-5xl font-bold">Box Office News!</h1>
           <p class="py-6">
