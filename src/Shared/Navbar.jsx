@@ -28,9 +28,9 @@ const Navbar = ({ children }) => {
         </NavLink>
       </li>
       <li>
-        <NavLink className="rounded-lg" to="/parts">
+        <a className="rounded-lg" href="#parts">
           Parts
-        </NavLink>
+        </a>
       </li>
       <li>
         <NavLink className="rounded-lg" to="/blogs">
@@ -110,7 +110,10 @@ const Navbar = ({ children }) => {
       <div class="drawer-content flex flex-col">
         {/* navbar */}
         {path ? (
-          ""
+          <div className="h-16 px-8 flex justify-between items-center bg-base-100">
+            <p>Dashboard </p>
+            <button class="btn btn-primary btn-sm">Home →</button>
+          </div>
         ) : (
           <div class={`w-full navbar bg-base-100 px-12 fixed top-0 z-50 `}>
             <div class="flex-1 px-2 mx-2 text-xl">OutTel</div>

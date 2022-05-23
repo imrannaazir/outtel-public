@@ -23,10 +23,10 @@ function App() {
           <Route path='/portfolio' element={<Portfolio />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
+          <Route path='/dashboard' element={<Dashboard />} />
 
           {/* privet auth */}
           <Route element={<RequiredAuth />}>
-            <Route path='/dashboard' element={<Dashboard />} />
 
           </Route>
           {/* admin route */}
@@ -34,7 +34,7 @@ function App() {
 
        </Route> */}
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </Navbar>
     </div>
   );
