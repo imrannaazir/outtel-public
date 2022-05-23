@@ -8,11 +8,12 @@ import Blogs from './pages/Blogs/Blogs';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Home from './pages/Home/Home';
 import Portfolio from './pages/Portfolio/Portfolio';
+import Footer from './Shared/Footer';
 import Navbar from './Shared/Navbar';
 
 function App() {
   return (
-    <div>
+    <div className='bg-base-200'>
       <Navbar>
         <Routes>
           {/* root or public route */}
@@ -33,6 +34,7 @@ function App() {
 
        </Route> */}
         </Routes>
+        <Footer />
       </Navbar>
     </div>
   );
