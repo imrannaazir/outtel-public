@@ -36,11 +36,11 @@ const Analysis = () => {
     },
   ];
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-4  bg-base-200">
+    <div className="grid md:grid-cols-2 lg:grid-cols-4  ">
       {infos.map((info) => (
         <>
           <div
-            className=" flex flex-col items-center gap-4 border m-2 py-6 hover:border-0 hover:shadow-xl uppercase"
+            className=" flex flex-col items-center gap-4  m-2 py-6  hover:shadow-xl uppercase bg-white rounded-lg"
             key={info.id}
           >
             <FontAwesomeIcon
