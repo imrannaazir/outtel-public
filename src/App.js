@@ -7,6 +7,7 @@ import RequiredAuth from './pages/Auth/RequiredAuth';
 import Blogs from './pages/Blogs/Blogs';
 import AddParts from './pages/Dashboard/AddParts';
 import Dashboard from './pages/Dashboard/Dashboard';
+import Feedback from './pages/Dashboard/Feedback';
 import MakeAdmin from './pages/Dashboard/MakeAdmin';
 import ManageOrders from './pages/Dashboard/ManageOrders';
 import ManageProducts from './pages/Dashboard/ManageProducts';
@@ -16,7 +17,7 @@ import UpdateProfile from './pages/Dashboard/UpdateProfile';
 import Home from './pages/Home/Home';
 import Portfolio from './pages/Portfolio/Portfolio';
 import Purchase from './pages/Purchase/Purchase';
-import Footer from './Shared/Footer';
+
 import Navbar from './Shared/Navbar';
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
             <Route index element={<UpdateProfile />} />
             <Route path='orders' element={<Orders />} />
             <Route path='reviews' element={<Reviews />} />
+            <Route path='feedback' element={<Feedback />} />
             <Route path='manage-orders' element={<ManageOrders />} />
             <Route path='add-part' element={<AddParts />} />
             <Route path='make-admin' element={<MakeAdmin />} />

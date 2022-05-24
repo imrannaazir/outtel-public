@@ -2,7 +2,7 @@ import React from "react";
 import { Link, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
-  const admin = true;
+  const admin = false;
   return (
     <div class="drawer drawer-mobile">
       <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
@@ -46,6 +46,9 @@ const Dashboard = () => {
               </li>
               <li>
                 <Link to="/dashboard/reviews">My Reviews</Link>
+              </li>
+              <li>
+                <Link to="/dashboard/feedback">Give Feedback</Link>
               </li>
             </div>
           )}
