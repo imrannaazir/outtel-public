@@ -1,16 +1,65 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import add from "../../assets/images/add.png";
+import Loading from "../../Shared/Loading";
 const AddParts = () => {
+  const [imageURL, setImageURL] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  //handle img
+  const handleImageUpload = (e) => {
+    setLoading(true);
+    const image = e.target.files[0];
+    const formData = new FormData();
+
+    formData.set("key", "bc4e13960b983e1fcc8bbf696232d413");
+    formData.set("image", image);
+
+    //upload image to image bb
+    axios
+      .post("https://api.imgbb.com/1/upload", formData)
+      .then(function (response) {
+        const imageLink = response.data.data.display_url;
+        setImageURL(imageLink);
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+
+  //form element
   const {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm({ mode: onchange });
 
+  //handle form
   const onSubmit = (data) => {
-    console.log(data);
+    const partData = {
+      ...data,
+      image: imageURL,
+    };
+    // post data to db
+    (async function () {
+      const { data } = await axios.post(
+        "http://localhost:5000/parts",
+        partData
+      );
+      console.log(data);
+      toast.success("Successfully added new part!");
+    })();
+    //reset field
+    reset();
   };
+  if (loading) return <Loading />;
   return (
     <div class="flex justify-center items-center bg-base-200">
       <div class="hero-content flex-col lg:flex-row-reverse">
@@ -47,23 +96,23 @@ const AddParts = () => {
             {/* Product des field */}
             <div class="form-control">
               <label class="label">
-                <span class="label-text">Product Name</span>
+                <span class="label-text">Product Description</span>
               </label>
               <textarea
-                {...register("name", {
+                {...register("description", {
                   required: {
                     value: true,
-                    message: "Product name is required",
+                    message: "Product description is required",
                   },
                 })}
                 type="text"
-                placeholder="Enter product name"
+                placeholder="Enter product description"
                 class="input input-bordered w-full h-16 max-w-xs"
               />
               <label class="label">
-                {errors.name?.type === "required" && (
+                {errors.description?.type === "required" && (
                   <span class="label-text-alt text-error">
-                    {errors.name.message}
+                    {errors.description.message}
                   </span>
                 )}
               </label>
@@ -72,26 +121,27 @@ const AddParts = () => {
             {/* quantity */}
 
             <div className="flex justify-between">
-              {/* quantity */}
+              {/*min quantity */}
               <div class="form-control w-[40%]">
                 <label class="label">
-                  <span class="label-text">Product Name</span>
+                  <span class="label-text">Minimum Quantity</span>
                 </label>
                 <input
-                  {...register("name", {
+                  {...register("min_quantity", {
                     required: {
                       value: true,
-                      message: "Product name is required",
+                      message: "This field is required",
                     },
                   })}
-                  type="text"
-                  placeholder="Enter product name"
+                  min="1"
+                  type="number"
+                  placeholder="Min quantity"
                   class="input input-bordered w-full max-w-xs"
                 />
                 <label class="label">
-                  {errors.name?.type === "required" && (
+                  {errors.min_quantity?.type === "required" && (
                     <span class="label-text-alt text-error">
-                      {errors.name.message}
+                      {errors.min_quantity.message}
                     </span>
                   )}
                 </label>
@@ -99,33 +149,35 @@ const AddParts = () => {
               {/* quantity */}
               <div class="form-control w-[40%]">
                 <label class="label">
-                  <span class="label-text">Product Name</span>
+                  <span class="label-text">Available Quantity</span>
                 </label>
                 <input
-                  {...register("name", {
+                  {...register("quantity", {
                     required: {
                       value: true,
-                      message: "Product name is required",
+                      message: "This field is required",
                     },
                   })}
-                  type="text"
-                  placeholder="Enter product name"
+                  min="1"
+                  type="number"
+                  placeholder="Quantity"
                   class="input input-bordered w-full max-w-xs"
                 />
                 <label class="label">
-                  {errors.name?.type === "required" && (
+                  {errors.quantity?.type === "required" && (
                     <span class="label-text-alt text-error">
-                      {errors.name.message}
+                      {errors.quantity.message}
                     </span>
                   )}
                 </label>
               </div>
             </div>
-            {/* quantity */}
+
+            {/* price and image */}
 
             <div className="flex justify-between">
               {/* price */}
-              <div class="form-control w-[40%]">
+              <div class="form-control w-[30%]">
                 <label class="label">
                   <span class="label-text">Price</span>
                 </label>
@@ -133,49 +185,36 @@ const AddParts = () => {
                   {...register("price", {
                     required: {
                       value: true,
-                      message: "Price name is required",
+                      message: "Price is required",
                     },
                   })}
+                  min="1"
                   type="number"
-                  placeholder="price/parts"
+                  placeholder="price"
                   class="input input-bordered w-full max-w-xs"
                 />
                 <label class="label">
-                  {errors.name?.type === "required" && (
+                  {errors.price?.type === "required" && (
                     <span class="label-text-alt text-error">
-                      {errors.name.message}
+                      {errors.price.message}
                     </span>
                   )}
                 </label>
               </div>
-              {/* quantity */}
-              <div class="form-control w-[40%]">
+
+              {/* product img */}
+              <div class="form-control w-[65%]">
                 <label class="label">
-                  <span class="label-text">Product Name</span>
+                  <span class="label-text">Service Image</span>
                 </label>
-                <input
-                  {...register("name", {
-                    required: {
-                      value: true,
-                      message: "Product name is required",
-                    },
-                  })}
-                  type="text"
-                  placeholder="Enter product name"
-                  class="input input-bordered w-full max-w-xs"
-                />
-                <label class="label">
-                  {errors.name?.type === "required" && (
-                    <span class="label-text-alt text-error">
-                      {errors.name.message}
-                    </span>
-                  )}
-                </label>
+                <input type="file" class="" onChange={handleImageUpload} />
               </div>
             </div>
 
             <div class="form-control mt-6">
-              <button class="btn btn-primary">Login</button>
+              <button type="submit" class="btn btn-primary">
+                Add New
+              </button>
             </div>
           </form>
         </div>

@@ -1,3 +1,4 @@
+import { Toaster } from 'react-hot-toast';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import NotFound from './pages/AllParts/NotFound';
@@ -25,6 +26,7 @@ function App() {
   return (
     <div className='bg-base-200'>
       <Navbar>
+        <Toaster />
         <Routes>
           {/* root or public route */}
           <Route path='/' element={<Home />} />
