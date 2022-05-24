@@ -2,7 +2,7 @@ import React from "react";
 import { Link, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
-  const admin = false;
+  const admin = true;
   return (
     <div class="drawer drawer-mobile">
       <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
@@ -54,16 +54,16 @@ const Dashboard = () => {
           {admin && (
             <div>
               <li>
-                <Link to="/dashboard/reviews">Manage Orders</Link>
+                <Link to="/dashboard/manage-orders">Manage Orders</Link>
               </li>
               <li>
-                <Link to="/dashboard/reviews">Add Parts</Link>
+                <Link to="/dashboard/add-part">Add Parts</Link>
               </li>
               <li>
-                <Link to="/dashboard/reviews">Make Admin</Link>
+                <Link to="/dashboard/make-admin">Make Admin</Link>
               </li>
               <li>
-                <Link to="/dashboard/reviews">Manage Products</Link>
+                <Link to="/dashboard/manage-products">Manage Products</Link>
               </li>
             </div>
           )}

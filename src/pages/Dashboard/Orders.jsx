@@ -1,4 +1,5 @@
 import React from "react";
+import Order from "./Order";
 
 const Orders = () => {
   return (
@@ -17,12 +18,7 @@ const Orders = () => {
           </thead>
           <tbody>
             {/* <!-- row 1 --> */}
-            <tr>
-              <th>1</th>
-              <td>Cy Ganderton</td>
-              <td>Quality Control Specialist</td>
-              <td>Blue</td>
-            </tr>
+            <Order />
           </tbody>
         </table>
       </div>

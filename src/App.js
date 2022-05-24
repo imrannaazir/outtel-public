@@ -5,7 +5,11 @@ import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
 import RequiredAuth from './pages/Auth/RequiredAuth';
 import Blogs from './pages/Blogs/Blogs';
+import AddParts from './pages/Dashboard/AddParts';
 import Dashboard from './pages/Dashboard/Dashboard';
+import MakeAdmin from './pages/Dashboard/MakeAdmin';
+import ManageOrders from './pages/Dashboard/ManageOrders';
+import ManageProducts from './pages/Dashboard/ManageProducts';
 import Orders from './pages/Dashboard/Orders';
 import Reviews from './pages/Dashboard/Reviews';
 import UpdateProfile from './pages/Dashboard/UpdateProfile';
@@ -34,7 +38,11 @@ function App() {
           <Route path='/dashboard' element={<RequiredAuth><Dashboard /></RequiredAuth>} >
             <Route index element={<UpdateProfile />} />
             <Route path='orders' element={<Orders />} />
-            <Route path='Reviews' element={<Reviews />} />
+            <Route path='reviews' element={<Reviews />} />
+            <Route path='manage-orders' element={<ManageOrders />} />
+            <Route path='add-part' element={<AddParts />} />
+            <Route path='make-admin' element={<MakeAdmin />} />
+            <Route path='manage-products' element={<ManageProducts />} />
 
 
 
