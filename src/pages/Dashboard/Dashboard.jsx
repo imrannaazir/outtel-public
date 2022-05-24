@@ -2,6 +2,7 @@ import React from "react";
 import { Link, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
+  const admin = false;
   return (
     <div class="drawer drawer-mobile">
       <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
@@ -32,18 +33,40 @@ const Dashboard = () => {
         <label for="my-drawer-2" class="drawer-overlay"></label>
         <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
           {/* <!-- Sidebar content here --> */}
+          <li></li>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/dashboard">Edit Profile</Link>
           </li>
-          <li>
-            <Link to="/dashboard">My Appointments</Link>
-          </li>
-          <li>
-            <Link to="/dashboard/updateProfile">My Reviews</Link>
-          </li>
-          <li>
-            <Link to="/dashboard/history">History</Link>
-          </li>
+
+          {/* user's routes */}
+          {!admin && (
+            <div>
+              <li>
+                <Link to="/dashboard/orders">My Orders</Link>
+              </li>
+              <li>
+                <Link to="/dashboard/reviews">My Reviews</Link>
+              </li>
+            </div>
+          )}
+
+          {/* admin's routes */}
+          {admin && (
+            <div>
+              <li>
+                <Link to="/dashboard/reviews">Manage Orders</Link>
+              </li>
+              <li>
+                <Link to="/dashboard/reviews">Add Parts</Link>
+              </li>
+              <li>
+                <Link to="/dashboard/reviews">Make Admin</Link>
+              </li>
+              <li>
+                <Link to="/dashboard/reviews">Manage Products</Link>
+              </li>
+            </div>
+          )}
         </ul>
       </div>
     </div>

@@ -2,7 +2,6 @@ import { faBagShopping, faWarehouse } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
 
 const Purchase = () => {
   const {
@@ -17,11 +16,13 @@ const Purchase = () => {
   return (
     <div class="hero bg-base-200 border-2 mt-16">
       <div class="grid lg:grid-cols-2 justify-items-center my-10 w-[80%] mx-auto">
-        <img
-          src="https://api.lorem.space/image/movie?w=260&h=400"
-          class="max-w-sm rounded-lg shadow-2xl"
-          alt=""
-        />
+        <div className="flex justify-center items-center">
+          <img
+            src="https://api.lorem.space/image/movie?w=260&h=400"
+            class="max-w-sm rounded-lg shadow-2xl"
+            alt=""
+          />
+        </div>
 
         <div>
           <h1 class="text-5xl font-bold">Box Office News!</h1>
@@ -117,6 +118,12 @@ const Purchase = () => {
               <label class="input-group">
                 <span>Quantity</span>
                 <input
+                  {...register("quantity", {
+                    required: {
+                      value: true,
+                      message: "quantity is required",
+                    },
+                  })}
                   type="number"
                   min="150"
                   placeholder="150"
@@ -124,10 +131,17 @@ const Purchase = () => {
                   class="input input-bordered"
                 />
               </label>
+              <label class="label">
+                {errors.phone?.type === "required" && (
+                  <span class="label-text-alt text-error">
+                    {errors.quantity.message}
+                  </span>
+                )}
+              </label>
             </div>
 
             <div class="form-control mt-6">
-              <button class="btn btn-primary">Login</button>
+              <button class="btn btn-primary">Place Order</button>
             </div>
           </form>
         </div>

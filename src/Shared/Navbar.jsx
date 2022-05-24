@@ -5,6 +5,8 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase.init";
 import { signOut } from "firebase/auth";
 import Loading from "./Loading";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBarsStaggered } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = ({ children }) => {
   const location = useLocation();
@@ -66,6 +68,7 @@ const Navbar = ({ children }) => {
             </p>
             <p className="text-center  text-xs">{user?.email}</p>
             <Link className="btn btn-block btn-outline my-2" to="/dashboard">
+              <FontAwesomeIcon icon={faBarsStaggered} />
               Dashboard
             </Link>
 
@@ -109,8 +112,12 @@ const Navbar = ({ children }) => {
         {/* navbar */}
         {path ? (
           <div className="h-16 px-8 flex justify-between items-center bg-base-100">
-            <p>Dashboard </p>
-            <button class="btn btn-primary btn-sm">Home →</button>
+            <p className="text-2xl">
+              <FontAwesomeIcon icon={faBarsStaggered} /> Dashboard
+            </p>
+            <Link to="/" class="btn btn-primary btn-sm">
+              Home →
+            </Link>
           </div>
         ) : (
           <div class={`w-full navbar bg-base-100 px-12 fixed top-0 z-50 `}>
