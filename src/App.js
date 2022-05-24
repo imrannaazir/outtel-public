@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import NotFound from './pages/AllParts/NotFound';
 import Parts from './pages/AllParts/Parts';
 import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
@@ -32,6 +33,7 @@ function App() {
           <Route path='/portfolio' element={<Portfolio />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
+          <Route path='*' element={<NotFound />} />
 
           {/* protected routes */}
           <Route path='/purchase' element={<RequiredAuth><Purchase /></RequiredAuth>} />
