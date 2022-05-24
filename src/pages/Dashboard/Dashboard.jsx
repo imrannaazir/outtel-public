@@ -39,7 +39,7 @@ const Dashboard = () => {
             <Link to="/dashboard">My Appointments</Link>
           </li>
           <li>
-            <Link to="/dashboard/reviews">My Reviews</Link>
+            <Link to="/dashboard/updateProfile">My Reviews</Link>
           </li>
           <li>
             <Link to="/dashboard/history">History</Link>

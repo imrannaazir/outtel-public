@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import userImg from "../../src/assets/images/user.jpg";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase.init";
@@ -10,7 +10,6 @@ const Navbar = ({ children }) => {
   const location = useLocation();
   const [path, setPath] = useState(false);
   const [user, loading] = useAuthState(auth);
-  console.log(user);
 
   useEffect(() => {
     if (location.pathname.includes("dashboard")) {
@@ -48,7 +47,6 @@ const Navbar = ({ children }) => {
           <label tabindex="0">
             <div class="avatar online mt-2">
               <div class="w-8 rounded-full">
-                {console.log(user?.photoURL)}
                 <img src={user?.photoURL || userImg} alt="" />
               </div>
             </div>
@@ -67,9 +65,9 @@ const Navbar = ({ children }) => {
               {user?.displayName}
             </p>
             <p className="text-center  text-xs">{user?.email}</p>
-            <a className="btn btn-block btn-outline my-2" href="/dashboard">
+            <Link className="btn btn-block btn-outline my-2" to="/dashboard">
               Dashboard
-            </a>
+            </Link>
 
             <button
               onClick={() => {

@@ -19,7 +19,7 @@ const Login = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
 
   //token
-  const [token] = useToken(eUser || gUser);
+  const [token] = useToken(eUser?.user || gUser?.user);
 
   const {
     register,
@@ -28,7 +28,6 @@ const Login = () => {
   } = useForm({ mode: onchange });
 
   const onSubmit = (data) => {
-    console.log(data);
     signInWithEmailAndPassword(data.email, data.password);
   };
   if (eLoading || gLoading) return <Loading />;
