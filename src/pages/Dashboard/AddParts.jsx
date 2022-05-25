@@ -205,7 +205,7 @@ const AddParts = () => {
               {/* product img */}
               <div class="form-control w-[65%]">
                 <label class="label">
-                  <span class="label-text">Service Image</span>
+                  <span class="label-text">Part Image</span>
                 </label>
                 <input type="file" class="" onChange={handleImageUpload} />
               </div>

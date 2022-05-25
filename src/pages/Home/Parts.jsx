@@ -7,7 +7,8 @@ const Parts = () => {
   useEffect(() => {
     (async function () {
       const { data } = await axios.get("http://localhost:5000/parts");
-      setParts(data);
+      const parts = data.slice(0, 3);
+      setParts(parts);
     })();
   }, []);
   return (

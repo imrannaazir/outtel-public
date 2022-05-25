@@ -1,12 +1,23 @@
 import React from "react";
+import userIMG from "../../assets/images/user.jpg";
 
-const User = () => {
+const User = ({ i, user: { name, email, photoURL } }) => {
   return (
     <tr>
-      <th>1</th>
-      <td>Cy Ganderton</td>
-      <td>Quality Control Specialist</td>
-      <td>Blue</td>
+      <th>{i + 1}</th>
+      <th>
+        <img
+          className="w-8 h-8 rounded-full"
+          src={photoURL || userIMG}
+          alt=""
+        />
+      </th>
+
+      <td>{name}</td>
+      <td>{email}</td>
+      <td>
+        <button className="btn btn-xs">Make admin</button>
+      </td>
     </tr>
   );
 };
