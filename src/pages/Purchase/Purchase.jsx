@@ -1,12 +1,23 @@
 import { faBagShopping, faWarehouse } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 
 const Purchase = () => {
   const id = useParams();
   console.log(id);
+  // load a parts
+  const [part, setPart] = useState({});
+  const { _id, name, description, quantity, min_quantity, price, image } = part;
+  useEffect(() => {
+    (async function () {
+      const { data } = await axios.get(`http://localhost:5000/parts/${id.id}`);
+      setPart(data[0]);
+    })();
+  }, [id]);
+
   const {
     register,
     formState: { errors },
@@ -20,28 +31,22 @@ const Purchase = () => {
     <div class="hero bg-base-200 border-2 mt-16">
       <div class="grid lg:grid-cols-2 justify-items-center my-10 w-[80%] mx-auto">
         <div className="flex justify-center items-center">
-          <img
-            src="https://api.lorem.space/image/movie?w=260&h=400"
-            class="max-w-sm rounded-lg shadow-2xl"
-            alt=""
-          />
+          <img src={image} class="max-w-sm rounded-lg shadow-2xl" alt="" />
         </div>
 
         <div>
-          <h1 class="text-5xl font-bold">Box Office News!</h1>
+          <h1 class="text-5xl font-bold">{name}</h1>
           <p className="flex gap-6">
             <span>
-              <FontAwesomeIcon icon={faWarehouse} /> Available : 150
+              <FontAwesomeIcon icon={faWarehouse} /> Available : {quantity}
             </span>
             <span>
-              <FontAwesomeIcon icon={faBagShopping} /> Order minimum : 15
+              <FontAwesomeIcon icon={faBagShopping} /> Order minimum :{" "}
+              {min_quantity}
             </span>
+            <span>Price : ${price}</span>
           </p>
-          <p class="mt-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
-          </p>
+          <p class="mt-6">{description}</p>
 
           <form onSubmit={handleSubmit(onSubmit)} class="c">
             {/* name field */}
