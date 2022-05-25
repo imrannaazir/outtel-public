@@ -1,8 +1,8 @@
 import React from "react";
-import Skills from "../../Shared/Skills";
 import CareerObj from "./CareerObj";
 import MyDetails from "./MyDetails";
 import PortfolioBanner from "./PortfolioBanner";
+import Skills from "./Skills";
 
 const Portfolio = () => {
   return (

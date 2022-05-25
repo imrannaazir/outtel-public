@@ -19,6 +19,7 @@ import UpdateProfile from './pages/Dashboard/UpdateProfile';
 import Home from './pages/Home/Home';
 import Portfolio from './pages/Portfolio/Portfolio';
 import Purchase from './pages/Purchase/Purchase';
+import Footer from './Shared/Footer';
 
 import Navbar from './Shared/Navbar';
 
@@ -38,7 +39,7 @@ function App() {
           <Route path='*' element={<NotFound />} />
 
           {/* protected routes */}
-          <Route path='/purchase' element={<RequiredAuth><Purchase /></RequiredAuth>} />
+          <Route path='/purchase/:id' element={<RequiredAuth><Purchase /></RequiredAuth>} />
 
           <Route path='/dashboard' element={<RequiredAuth><Dashboard /></RequiredAuth>} >
             <Route index element={<UpdateProfile />} />
@@ -54,7 +55,7 @@ function App() {
 
           </Route>
         </Routes>
-        {/* <Footer /> */}
+        <Footer />
       </Navbar>
     </div>
   );

@@ -1,11 +1,13 @@
 import { faBagShopping, faWarehouse } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Part = ({
   i,
-  part: { image, quantity, min_quantity, name, description, price },
+  part: { image, quantity, min_quantity, name, description, price, _id },
 }) => {
+  const navigate = useNavigate();
   return (
     <div class="hero bg-base-200 border-2">
       <div class="grid lg:grid-cols-2 justify-items-center my-10 w-[80%] mx-auto">
@@ -34,7 +36,12 @@ const Part = ({
             <span>/1</span>
           </p>
 
-          <button class="btn btn-primary mt-4">purchase</button>
+          <button
+            onClick={() => navigate(`/purchase/${_id}`)}
+            class="btn btn-primary mt-4"
+          >
+            purchase
+          </button>
         </div>
       </div>
     </div>

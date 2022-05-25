@@ -6,14 +6,33 @@ const MyDetails = () => {
     <div class="hero min-h-screen bg-base-200">
       <div class="hero-content flex-col lg:flex-row-reverse">
         <img src={me} className="w-[50%]" alt="" />
-        <div>
-          <h1 class="text-5xl font-bold">Box Office News!</h1>
-          <p class="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi. career
+        <div className="w-full">
+          <h1 class="text-5xl font-bold w-full">Who Am I!</h1>
+          <p class="pt-6 text-3xl font-semibold text-primary">
+            Imran Nazir Emon
           </p>
-          <button class="btn btn-primary">Get Started</button>
+          <p className="mb-5 text-xl">Frontend Developer, React JS.</p>
+          <p className="text-primary font-semibold">
+            AGE: <span className="text-black font-normal">19</span>{" "}
+          </p>
+          <p className="text-primary font-semibold">
+            PHONE:{" "}
+            <span className="text-black font-normal">(+880) 1405580607</span>{" "}
+          </p>
+          <p className="text-primary font-semibold">
+            EMAIL:{" "}
+            <span className="text-black font-normal">
+              imrannaaziremon@gmail.com
+            </span>{" "}
+          </p>
+          <p className="text-primary font-semibold mb-6">
+            ADDRESS:{" "}
+            <span className="text-black font-normal">
+              Jashore, Khulna,Bangladesh
+            </span>{" "}
+          </p>
+
+          <button class="btn btn-primary">Contact me</button>
         </div>
       </div>
     </div>

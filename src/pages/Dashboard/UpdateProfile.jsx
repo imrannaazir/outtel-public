@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import userIMG from "../../assets/images/user.jpg";
 import { auth } from "../../firebase.init";
@@ -9,6 +9,18 @@ import toast from "react-hot-toast";
 
 const UpdateProfile = () => {
   const [user] = useAuthState(auth);
+  // user in db
+  const [userDb, setUserDb] = useState([]);
+  console.log(userDb);
+  useEffect(() => {
+    (async function () {
+      const { data } = await axios.get(
+        `http://localhost:5000/users/${user?.email}`
+      );
+      setUserDb(data);
+    })();
+  }, [user?.email]);
+
   console.log(user.photoURL);
   const [imageURL, setImageURL] = useState("");
   const [loading, setLoading] = useState(false);
@@ -116,6 +128,30 @@ const UpdateProfile = () => {
               readOnly
               class="input input-bordered"
             />
+          </label>
+        </div>
+        {/* phone num field */}
+        <div className="form-control">
+          <label class="input-group">
+            <span className=" w-[110px] bg-white">Phone :</span>
+            <input
+              {...register("phone", {
+                required: {
+                  value: true,
+                  message: "phone is required",
+                },
+              })}
+              type="text"
+              placeholder={"(+880) 1912324354"}
+              class="input input-bordered"
+            />
+          </label>
+          <label class="label">
+            {errors.phone?.type === "required" && (
+              <span class="label-text-alt text-error">
+                {errors.phone.message}
+              </span>
+            )}
           </label>
         </div>
         {/* location field */}
