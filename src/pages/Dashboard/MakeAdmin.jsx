@@ -1,15 +1,22 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useQuery } from "react-query";
+import Loading from "../../Shared/Loading";
 import User from "./User";
 
 const MakeAdmin = () => {
-  const [users, setUsers] = useState([]);
-  useEffect(() => {
-    (async function () {
-      const { data } = await axios.get("http://localhost:5000/users");
-      setUsers(data);
-    })();
-  }, []);
+  const { isLoading, error, data, refetch } = useQuery("repoData", () =>
+    axios.get("http://localhost:5000/users", {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
+  );
+
+  if (isLoading) return <Loading />;
+  if (error) {
+    console.log(error);
+  }
+  const users = data?.data;
   return (
     <div className="w-[95%] px-4 mx-auto my-8 bg-base-100">
       <p className="text-lg py-4"> Make Admin</p>
@@ -28,7 +35,7 @@ const MakeAdmin = () => {
           <tbody>
             {/* <!-- row 1 --> */}
             {users.map((user, i) => (
-              <User key={i} user={user} i={i} />
+              <User key={i} user={user} i={i} refetch={refetch} />
             ))}
           </tbody>
         </table>
