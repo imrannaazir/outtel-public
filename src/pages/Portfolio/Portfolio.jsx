@@ -1,7 +1,9 @@
 import React from "react";
+import Footer from "../../Shared/Footer";
 import CareerObj from "./CareerObj";
 import MyDetails from "./MyDetails";
 import PortfolioBanner from "./PortfolioBanner";
+import Projects from "./Projects";
 import Skills from "./Skills";
 
 const Portfolio = () => {
@@ -11,6 +13,8 @@ const Portfolio = () => {
       <MyDetails />
       <CareerObj />
       <Skills />
+      <Projects />
+      <Footer />
     </div>
   );
 };
