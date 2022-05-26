@@ -1,12 +1,12 @@
 import React from "react";
 
-const Review = () => {
+const Review = ({ i, review: { name, ratting, feedback } }) => {
   return (
     <tr>
-      <th>1</th>
-      <td>Cy Ganderton</td>
-      <td>Quality Control Specialist</td>
-      <td>Blue</td>
+      <th>{i + 1}</th>
+      <td>{name}</td>
+      <td>{feedback.slice(0, 60)}...</td>
+      <td>{ratting}</td>
     </tr>
   );
 };
