@@ -4,12 +4,8 @@ import Loading from "../../Shared/Loading";
 import User from "./User";
 
 const MakeAdmin = () => {
-  const { isLoading, error, data, refetch } = useQuery("repoData", () =>
-    axios.get("http://localhost:5000/users", {
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    })
+  const { isLoading, error, data, refetch } = useQuery("allUser", () =>
+    axios.get("http://localhost:5000/users")
   );
 
   if (isLoading) return <Loading />;
