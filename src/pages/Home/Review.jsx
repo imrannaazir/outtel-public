@@ -1,3 +1,5 @@
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import quote from "../../assets/icons/quote.svg";
 const Review = () => {
@@ -21,7 +23,46 @@ const Review = () => {
           </div>
           <div className="ml-4 pt-2">
             <p className="text-xl text-primary">Full Name</p>
-            <p>Our Customer</p>
+            <div>
+              {/* <div>
+                <FontAwesomeIcon className="text-orange-500" icon={faStar} />
+                <FontAwesomeIcon className="text-gray-500" icon={faStar} />
+                <FontAwesomeIcon className="text-gray-500" icon={faStar} />
+                <FontAwesomeIcon className="text-gray-500" icon={faStar} />
+                <FontAwesomeIcon className="text-gray-500" icon={faStar} />
+              </div> */}
+
+              {/* <div>
+                <FontAwesomeIcon className="text-orange-500" icon={faStar} />
+                <FontAwesomeIcon className="text-orange-500" icon={faStar} />
+                <FontAwesomeIcon className="text-gray-500" icon={faStar} />
+                <FontAwesomeIcon className="text-gray-500" icon={faStar} />
+                <FontAwesomeIcon className="text-gray-500" icon={faStar} />
+              </div> */}
+
+              {/* <div>
+                <FontAwesomeIcon className="text-orange-500" icon={faStar} />
+                <FontAwesomeIcon className="text-orange-500" icon={faStar} />
+                <FontAwesomeIcon className="text-orange-500" icon={faStar} />
+                <FontAwesomeIcon className="text-gray-500" icon={faStar} />
+                <FontAwesomeIcon className="text-gray-500" icon={faStar} />
+              </div> */}
+              {/* <div>
+                <FontAwesomeIcon className="text-orange-500" icon={faStar} />
+                <FontAwesomeIcon className="text-orange-500" icon={faStar} />
+                <FontAwesomeIcon className="text-orange-500" icon={faStar} />
+                <FontAwesomeIcon className="text-orange-500" icon={faStar} />
+                <FontAwesomeIcon className="text-gray-500" icon={faStar} />
+              </div> */}
+
+              <div>
+                <FontAwesomeIcon className="text-orange-500" icon={faStar} />
+                <FontAwesomeIcon className="text-orange-500" icon={faStar} />
+                <FontAwesomeIcon className="text-orange-500" icon={faStar} />
+                <FontAwesomeIcon className="text-orange-500" icon={faStar} />
+                <FontAwesomeIcon className="text-orange-500" icon={faStar} />
+              </div>
+            </div>
           </div>
         </div>
       </div>

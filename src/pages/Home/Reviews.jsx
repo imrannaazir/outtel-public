@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -11,8 +11,16 @@ import "./styles.css";
 // import required modules
 import { EffectCoverflow, Autoplay } from "swiper";
 import Review from "./Review";
+import axios from "axios";
 const Reviews = () => {
-  const reviews = ["1", "2", "3", "4", "5", "6"];
+  const [reviews, setReviews] = useState([]);
+  useEffect(() => {
+    (async function () {
+      const { data } = await axios.get("http://localhost:5000/reviews");
+      console.log(data);
+      setReviews(data);
+    })();
+  }, []);
   return (
     <div className="">
       <p className="text-4xl font-bold font-serif text-center my-6">
