@@ -1,7 +1,30 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
+import { useQuery } from "react-query";
+import Loading from "../../Shared/Loading";
+import DeliverModal from "./DeliverModal";
 import ManageOrder from "./ManageOrder";
 
 const ManageOrders = () => {
+  const [selectedOrder, setSelectedOrder] = useState("");
+  const { isLoading, error, data, refetch } = useQuery("getOrders", () =>
+    axios.get("http://localhost:5000/Orders", {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
+  );
+
+  //order
+  const orders = data?.data;
+
+  //error
+  if (error) {
+    console.log(error);
+  }
+
+  // loading
+  if (isLoading) return <Loading />;
   return (
     <div className="w-[95%] px-4 mx-auto mt-8 bg-base-100">
       <p className="text-lg py-4"> Manage Orders</p>
@@ -10,18 +33,29 @@ const ManageOrders = () => {
           {/* <!-- head --> */}
           <thead>
             <tr>
-              <th></th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
+              <th>SL</th>
+              <th>Image</th>
+              <th>Product</th>
+              <th>Email</th>
+              <th>Status</th>
+              <th>Delivery</th>
             </tr>
           </thead>
           <tbody>
             {/* <!-- row 1 --> */}
-            <ManageOrder />
+            {orders.map((order, i) => (
+              <ManageOrder
+                key={i}
+                order={order}
+                i={i}
+                setSelectedOrder={setSelectedOrder}
+              />
+            ))}
           </tbody>
         </table>
       </div>
+
+      <DeliverModal selectedOrder={selectedOrder} refetch={refetch} />
     </div>
   );
 };
