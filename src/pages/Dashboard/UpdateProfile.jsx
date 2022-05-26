@@ -10,8 +10,10 @@ import toast from "react-hot-toast";
 const UpdateProfile = () => {
   const [user] = useAuthState(auth);
   // user in db
-  const [userDb, setUserDb] = useState([]);
+  const [userDb, setUserDb] = useState({});
   console.log(userDb);
+
+  /// get api for user
   useEffect(() => {
     (async function () {
       const { data } = await axios.get(
@@ -24,6 +26,7 @@ const UpdateProfile = () => {
   console.log(user.photoURL);
   const [imageURL, setImageURL] = useState("");
   const [loading, setLoading] = useState(false);
+
   //handle img
   const handleImageUpload = (e) => {
     setLoading(true);
@@ -66,11 +69,11 @@ const UpdateProfile = () => {
       ...data,
       name: user?.displayName,
       email: user?.email,
-      photoURL: user?.photoURL || imageURL,
+      photoURL: user?.photoURL || imageURL || userDb?.image,
     };
     console.log(updatedUser);
     (async function () {
-      const { data } = await axios.put(
+      const { data } = await axios.patch(
         `http://localhost:5000/update-users/${user?.email},`,
         updatedUser
       );
@@ -91,7 +94,7 @@ const UpdateProfile = () => {
           <img
             id="showImage"
             class="max-w-xs w-32 items-center border"
-            src={user?.photoURL || userIMG}
+            src={user?.photoURL || userDb?.photoURL || userIMG}
             alt=""
           />
           {/* product img */}
@@ -113,7 +116,7 @@ const UpdateProfile = () => {
             <input
               type="text"
               value={user?.displayName}
-              readOnly
+              disabled
               class="input input-bordered"
             />
           </label>
@@ -125,7 +128,7 @@ const UpdateProfile = () => {
             <input
               type="text"
               value={user?.email}
-              readOnly
+              disabled
               class="input input-bordered"
             />
           </label>
@@ -142,7 +145,7 @@ const UpdateProfile = () => {
                 },
               })}
               type="text"
-              placeholder={"(+880) 1912324354"}
+              placeholder={userDb?.phone || "update your phone number"}
               class="input input-bordered"
             />
           </label>
@@ -154,6 +157,7 @@ const UpdateProfile = () => {
             )}
           </label>
         </div>
+
         {/* location field */}
         <div className="form-control">
           <label class="input-group">
@@ -166,7 +170,7 @@ const UpdateProfile = () => {
                 },
               })}
               type="text"
-              placeholder={"Dhaka, Bangladesh."}
+              placeholder={userDb?.location || "update your location"}
               class="input input-bordered"
             />
           </label>
@@ -178,6 +182,7 @@ const UpdateProfile = () => {
             )}
           </label>
         </div>
+
         {/* education field */}
         <div className="form-control">
           <label class="input-group">
@@ -190,7 +195,7 @@ const UpdateProfile = () => {
                 },
               })}
               type="text"
-              placeholder={"CSE, University of Dhaka"}
+              placeholder={userDb?.education || "where was you reading"}
               class="input input-bordered"
             />
           </label>
@@ -214,7 +219,7 @@ const UpdateProfile = () => {
                 },
               })}
               type="text"
-              placeholder={"linkedin.com/in/username"}
+              placeholder={userDb?.linkedin || "linkedin.com/in/username"}
               class="input input-bordered"
             />
           </label>

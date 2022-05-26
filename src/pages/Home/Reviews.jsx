@@ -15,6 +15,9 @@ const Reviews = () => {
   const reviews = ["1", "2", "3", "4", "5", "6"];
   return (
     <div className="">
+      <p className="text-4xl font-bold font-serif text-center my-6">
+        TESTIMONIALS
+      </p>
       <Swiper
         effect={"coverflow"}
         grabCursor={true}

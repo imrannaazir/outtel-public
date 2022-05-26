@@ -17,7 +17,7 @@ const DeleteModal = ({ selectedPart, refetch }) => {
       {/* <!-- The button to open modal --> */}
 
       {/* <!-- Put this part before </body> tag --> */}
-      <input type="checkbox" id="my-modal-6" class="modal-toggle" />
+      <input type="checkbox" id="delete-modal" class="modal-toggle" />
       <div class="modal modal-bottom sm:modal-middle">
         <div class="modal-box">
           <h3 class="font-bold text-lg">
@@ -28,7 +28,7 @@ const DeleteModal = ({ selectedPart, refetch }) => {
             use Wikipedia for free!
           </p>
           <div class="modal-action">
-            <label onClick={handleDelete} for="my-modal-6" class="btn">
+            <label onClick={handleDelete} for="delete-modal" class="btn">
               Yay!
             </label>
           </div>

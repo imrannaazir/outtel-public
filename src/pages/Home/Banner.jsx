@@ -1,22 +1,22 @@
 import React from "react";
-import bannerIMG from "../../assets/images/banner.png";
 
 const Banner = () => {
   return (
-    <div
-      class="hero min-h-screen w-full "
-      style={{ background: `url(${bannerIMG})`, inset: "0" }}
-    >
-      <div class="hero-overlay bg-opacity-75"></div>
-      <div class="hero-content text-center text-neutral-content">
-        <div class="max-w-md">
-          <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
-          <p class="mb-5">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
+    <div className="w-full relative">
+      <img
+        className="w-full"
+        src="https://i.ibb.co/HH2NDjg/banner.jpg"
+        alt=""
+      />
+      <div className="absolute lg:w-[50%] top-[30%] right-0 flex flex-col items-center">
+        <div>
+          <p className="text-lg">Welcome to</p>
+          <p className="text-4xl font-bold">
+            {" "}
+            World's Biggest Tech Manufacturer
+            <br />
+            <span className="text-primary font-extrabold">OutTel Tech</span>
           </p>
-          <button class="btn btn-primary">Get Started</button>
         </div>
       </div>
     </div>

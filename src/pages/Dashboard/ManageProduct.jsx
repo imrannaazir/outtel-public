@@ -17,9 +17,8 @@ const ManageProduct = ({
       <td>{name}</td>
       <td>{quantity}</td>
       <td>
-        <label for="my-modal-6" class="btn modal-button">
+        <label for="delete-modal" class="btn btn-error btnxs modal-button">
           <FontAwesomeIcon
-            for="my-modal-6"
             onClick={() => setSelectedPart(_id)}
             icon={faTrash}
           />

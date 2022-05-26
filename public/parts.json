@@ -1,0 +1,29 @@
+[
+  {
+    "_id": "628f5071f8977f3a627facbc",
+    "name": "OutTel GT Graphics cards",
+    "description": "The OutTel GeForce RTX 3070 Noctua OC Edition 8GB GDDR6 Graphics Card is the first graphics card to feature Noctua fans and a heatsink that has been co-engineered by Noctua. This potent pairing allows the Outtel GeForce RTX 3070 Noctua Edition to operate at lower GPU temperatures and produce less noise than any air-cooled graphics card in its class. Outtel and Noctua have come together to deliver the quietest air-cooled graphics card in their class. ",
+    "min_quantity": "227",
+    "quantity": "6984",
+    "price": "411",
+    "image": "https://i.ibb.co/WDKsJx0/graphics-cards.jpg"
+  },
+  {
+    "_id": "628f4fd7f8977f3a627facbb",
+    "name": "OutTel OT21 Pro SSD",
+    "description": "Outtel Digital 120GB M.2 SSDs boost the everyday computing experience in your desktop or laptop desktop PC for fast performance and reliability.You can browse the web, play a game, or simply start your system in a flash.It is  the lowest power consuming drives in the industry with less power used in your laptop runs longer.\n\n",
+    "min_quantity": "98",
+    "quantity": "773",
+    "price": "200",
+    "image": "https://i.ibb.co/x3rzrz0/SSD.jpg"
+  },
+  {
+    "_id": "628f4f10f8977f3a627facba",
+    "name": "Outtel® Xeon Scalable Processors",
+    "description": "OutTel Xeon® Scalable processors benefit from decades of innovation for the most common workload requirements, supported by close partnerships and deep integrations with the world’s software leaders and solution providers.\n\nA balanced architecture, optimized for many workload types and performance levels, all with the consistent, open, OutTel architecture you know and trust, that delivers built-in AI acceleration and advanced security capabilities, OutTel ® Xeon® Scalable processors allow you to place your workloads securely where they perform best-from edge to cloud.",
+    "min_quantity": "105",
+    "quantity": "876",
+    "price": "332",
+    "image": "https://i.ibb.co/7C9QHKV/outtel-PROCESSORS.jpg"
+  }
+]

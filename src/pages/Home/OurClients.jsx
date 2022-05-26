@@ -15,7 +15,7 @@ const OurClients = () => {
 
   const settings = {
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
     speed: 7000,
@@ -23,14 +23,16 @@ const OurClients = () => {
     cssEase: "linear",
   };
   return (
-    <div className="w-[80%] mx-auto bg-base-200 mt-20">
-      <p className="text-center text-xl ">OUR CLIENTS</p>
+    <div className="p-16 bg-base-100 mt-20">
+      <p className="text-center mb-5 text-4xl font-bold font-serif">
+        OUR CLIENTS
+      </p>
 
       <div>
         <Slider {...settings} className="flex">
           {logos.map((logo) => (
             <div key={logo} className="">
-              <img src={logo} alt="" />
+              <img className=" w-[150px]" src={logo} alt="" />
             </div>
           ))}
         </Slider>

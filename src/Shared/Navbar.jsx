@@ -8,6 +8,8 @@ import Loading from "./Loading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBarsStaggered } from "@fortawesome/free-solid-svg-icons";
 
+import axios from "axios";
+
 const Navbar = ({ children }) => {
   const location = useLocation();
   const [path, setPath] = useState(false);
@@ -20,7 +22,21 @@ const Navbar = ({ children }) => {
       setPath(false);
     }
   }, [location.pathname]);
+  // userDb
+  const [userImage, setUserImage] = useState("");
+  useEffect(() => {
+    (async function () {
+      const { data } = await axios.get(
+        `http://localhost:5000/users/${user?.email}`
+      );
+      setUserImage(data.photoURL);
+    })();
+  }, [user?.email]);
+
+  //loading
   if (loading) return <Loading />;
+
+  //nav element
   const navElement = (
     <div className=" lg:flex gap-4">
       <li>
@@ -49,7 +65,7 @@ const Navbar = ({ children }) => {
           <label tabindex="0">
             <div class="avatar online mt-2">
               <div class="w-8 rounded-full">
-                <img src={user?.photoURL || userImg} alt="" />
+                <img src={user?.photoURL || userImage || userImg} alt="" />
               </div>
             </div>
           </label>
@@ -59,7 +75,7 @@ const Navbar = ({ children }) => {
           >
             <div class="avatar">
               <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 mx-auto">
-                <img src={user?.photoURL || userImg} alt="" />
+                <img src={user?.photoURL || userImage || userImg} alt="" />
               </div>
             </div>
             <div class="divider"></div>
@@ -99,7 +115,9 @@ const Navbar = ({ children }) => {
         </div>
       ) : (
         <li>
-          <NavLink to="/login">Login</NavLink>
+          <NavLink className="rounded-lg" to="/login">
+            Login
+          </NavLink>
         </li>
       )}
     </div>
