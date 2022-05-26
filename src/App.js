@@ -18,6 +18,7 @@ import Reviews from './pages/Dashboard/Reviews';
 import UpdateProfile from './pages/Dashboard/UpdateProfile';
 import Home from './pages/Home/Home';
 import Portfolio from './pages/Portfolio/Portfolio';
+import Payment from './pages/Purchase/Payment';
 import Purchase from './pages/Purchase/Purchase';
 import Footer from './Shared/Footer';
 
@@ -40,6 +41,7 @@ function App() {
 
           {/* protected routes */}
           <Route path='/purchase/:id' element={<RequiredAuth><Purchase /></RequiredAuth>} />
+          <Route path='/payment/:id' element={<RequiredAuth><Payment /></RequiredAuth>} />
 
           <Route path='/dashboard' element={<RequiredAuth><Dashboard /></RequiredAuth>} >
             <Route index element={<UpdateProfile />} />

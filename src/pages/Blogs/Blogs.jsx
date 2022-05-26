@@ -11,7 +11,6 @@ const Blogs = () => {
     setLoading(true);
     (async function () {
       const { data } = await axios.get("blogs.json");
-      console.log(data);
       setBlogs(data);
       setLoading(false);
     })();

@@ -73,7 +73,7 @@ const UpdateProfile = () => {
     };
     console.log(updatedUser);
     (async function () {
-      const { data } = await axios.patch(
+      const { data } = await axios.put(
         `http://localhost:5000/update-users/${user?.email},`,
         updatedUser
       );

@@ -2,7 +2,7 @@ import React from "react";
 import toast from "react-hot-toast";
 import userIMG from "../../assets/images/user.jpg";
 
-const User = ({ i, user: { name, email, photoURL, refetch, _id } }) => {
+const User = ({ i, refetch, user: { name, email, photoURL, role, _id } }) => {
   const handleRole = (email) => {
     console.log(email);
     fetch(`http://localhost:5000/users/admin/${email}`, {
@@ -20,8 +20,8 @@ const User = ({ i, user: { name, email, photoURL, refetch, _id } }) => {
       .then((data) => {
         if (data.modifiedCount > 0) {
           console.log(data);
-          refetch();
           toast.success(`Successfully made an admin`);
+          refetch();
         }
       });
   };
@@ -39,9 +39,13 @@ const User = ({ i, user: { name, email, photoURL, refetch, _id } }) => {
       <td>{name}</td>
       <td>{email}</td>
       <td>
-        <button onClick={() => handleRole(email)} className="btn btn-xs">
-          Make admin
-        </button>
+        {role === "admin" ? (
+          <p className="text-success">Admin</p>
+        ) : (
+          <button onClick={() => handleRole(email)} className="btn btn-xs">
+            Make admin
+          </button>
+        )}
       </td>
     </tr>
   );

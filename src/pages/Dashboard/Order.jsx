@@ -1,11 +1,12 @@
 import { faCancel } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Order = ({
   i,
   setSelectedCancel,
-  order: { name, image, email, payment, _id },
+  order: { name, image, email, paid, _id },
 }) => {
   return (
     <tr>
@@ -16,21 +17,23 @@ const Order = ({
       <td>{name}</td>
       <td>{email}</td>
       <td>
-        {payment ? (
+        {paid ? (
           <span className="text-success">Paid</span>
         ) : (
           <span className="text-warning">Unpaid</span>
         )}
       </td>
       <td>
-        {!payment ? (
-          <button className="btn btn-xs btn-success">Pay Now</button>
+        {!paid ? (
+          <Link to={`/payment/${_id}`} className="btn btn-xs btn-success">
+            Pay Now
+          </Link>
         ) : (
           "done"
         )}
       </td>
       <td>
-        {!payment ? (
+        {!paid ? (
           <label
             onClick={() => setSelectedCancel(_id)}
             for="cancel-modal"
@@ -39,7 +42,7 @@ const Order = ({
             <FontAwesomeIcon icon={faCancel} />
           </label>
         ) : (
-          "done"
+          ""
         )}
       </td>
     </tr>
