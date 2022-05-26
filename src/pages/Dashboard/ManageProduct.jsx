@@ -1,20 +1,13 @@
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import axios from "axios";
 import React from "react";
 
 const ManageProduct = ({
   i,
   refetch,
+  setSelectedPart,
   part: { _id, name, image, quantity },
 }) => {
-  //handle delete
-  const handleDelete = (id) => {
-    (async function () {
-      const { data } = await axios.delete(`http://localhost:5000/parts/${id}`);
-      console.log(data);
-    })();
-  };
   return (
     <tr>
       <th>{i + 1}</th>
@@ -24,7 +17,13 @@ const ManageProduct = ({
       <td>{name}</td>
       <td>{quantity}</td>
       <td>
-        <FontAwesomeIcon onClick={() => handleDelete(_id)} icon={faTrash} />
+        <label for="my-modal-6" class="btn modal-button">
+          <FontAwesomeIcon
+            for="my-modal-6"
+            onClick={() => setSelectedPart(_id)}
+            icon={faTrash}
+          />
+        </label>
       </td>
     </tr>
   );

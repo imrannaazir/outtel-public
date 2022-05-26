@@ -2,9 +2,12 @@ import axios from "axios";
 import React from "react";
 import { useQuery } from "react-query";
 import Loading from "../../Shared/Loading";
+import DeleteModal from "./DeleteModal";
 import ManageProduct from "./ManageProduct";
+import { useState } from "react";
 
 const ManageProducts = () => {
+  const [selectedPart, setSelectedPart] = useState("");
   const { isLoading, error, data, refetch } = useQuery("partsData", () =>
     axios.get("http://localhost:5000/parts", {
       headers: {
@@ -37,11 +40,17 @@ const ManageProducts = () => {
           <tbody>
             {/* <!-- row 1 --> */}
             {parts.map((part, i) => (
-              <ManageProduct key={i} i={i} refetch={refetch} part={part} />
+              <ManageProduct
+                key={i}
+                i={i}
+                part={part}
+                setSelectedPart={setSelectedPart}
+              />
             ))}
           </tbody>
         </table>
       </div>
+      <DeleteModal refetch={refetch} selectedPart={selectedPart} />
     </div>
   );
 };

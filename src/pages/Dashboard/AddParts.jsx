@@ -14,7 +14,7 @@ const AddParts = () => {
     const image = e.target.files[0];
     const formData = new FormData();
 
-    formData.set("key", "bc4e13960b983e1fcc8bbf696232d413");
+    formData.set("key", "bc4e13960b983e1fcc8bbf.696232d413");
     formData.set("image", image);
 
     //upload image to image bb
