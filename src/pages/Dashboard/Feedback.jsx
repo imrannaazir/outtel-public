@@ -1,16 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useAuthState } from "react-firebase-hooks/auth";
+
+import { auth } from "../../firebase.init";
 import feedbackIMG from "../../assets/images/feedback .png";
+import Loading from "../../Shared/Loading";
+import axios from "axios";
+import { async } from "@firebase/util";
 const Feedback = () => {
+  //user
+  const [user, loading] = useAuthState(auth);
+  //ratting state
+  // get user data
+  const [userInfo, setUserInfo] = useState("");
+  useEffect(() => {
+    (async function () {
+      const { data } = await axios.get(
+        `http://localhost:5000/user-image/${user?.email}`
+      );
+      console.log(data);
+    })();
+  }, [user?.email]);
+
+  const [ratting, setRatting] = useState(5);
+
+  //react hook form
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm({ mode: onchange });
 
+  //handle feedback
   const onSubmit = (data) => {
-    console.log(data);
+    const newFeedback = { ...data, ratting }(async function () {
+      const { data } = await axios.post(
+        "http://localhost:5000/feedbacks",
+        newFeedback
+      );
+      console.log(data);
+    })();
   };
+  if (loading) return <Loading />;
+
   return (
     <div class="flex justify-center items-center bg-base-200">
       <div class="hero-content flex-col lg:flex-row-reverse">
@@ -26,42 +58,32 @@ const Feedback = () => {
               </label>
               <input
                 type="text"
-                placeholder="Enter product name"
-                class="input input-bordered w-full max-w-xs"
-              />
-            </div>
-            {/* Product name field */}
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Your Email</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Enter product name"
+                value={user?.displayName}
+                disabled
                 class="input input-bordered w-full max-w-xs"
               />
             </div>
 
-            {/* Product des field */}
+            {/* feedback des field */}
             <div class="form-control">
               <label class="label">
-                <span class="label-text">Product Name</span>
+                <span class="label-text">Feedback</span>
               </label>
               <textarea
-                {...register("name", {
+                {...register("feedback", {
                   required: {
                     value: true,
-                    message: "Product name is required",
+                    message: "Please write a feedback!",
                   },
                 })}
                 type="text"
-                placeholder="Enter product name"
+                placeholder="Write a feedback"
                 class="input input-bordered w-full h-24 max-w-xs"
               />
               <label class="label">
-                {errors.name?.type === "required" && (
+                {errors.feedback?.type === "required" && (
                   <span class="label-text-alt text-error">
-                    {errors.name.message}
+                    {errors.feedback.message}
                   </span>
                 )}
               </label>
@@ -70,16 +92,36 @@ const Feedback = () => {
             <div className="flex gap-8 items-center">
               <p className="text-lg">Ratting:</p>
               <div class="rating w-full">
-                <input type="radio" name="rating-1" class="mask mask-star" />
                 <input
                   type="radio"
                   name="rating-1"
-                  class="mask mask-star"
-                  checked
+                  class="mask mask-star bg-orange-400"
+                  onClick={() => setRatting(1)}
                 />
-                <input type="radio" name="rating-1" class="mask mask-star" />
-                <input type="radio" name="rating-1" class="mask mask-star" />
-                <input type="radio" name="rating-1" class="mask mask-star" />
+                <input
+                  type="radio"
+                  name="rating-1"
+                  class="mask mask-star bg-orange-400"
+                  onClick={() => setRatting(2)}
+                />
+                <input
+                  type="radio"
+                  name="rating-1"
+                  class="mask mask-star bg-orange-400"
+                  onClick={() => setRatting(3)}
+                />
+                <input
+                  type="radio"
+                  name="rating-1"
+                  class="mask mask-star bg-orange-400"
+                  onClick={() => setRatting(4)}
+                />
+                <input
+                  type="radio"
+                  name="rating-1"
+                  class="mask mask-star bg-orange-400"
+                  onClick={() => setRatting(5)}
+                />
               </div>
             </div>
 

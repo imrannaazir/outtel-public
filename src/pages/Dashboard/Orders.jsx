@@ -4,6 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
 import { auth } from "../../firebase.init";
 import Loading from "../../Shared/Loading";
+import CancelModal from "./CancelModal";
 import Order from "./Order";
 
 const Orders = () => {
@@ -58,6 +59,7 @@ const Orders = () => {
           </tbody>
         </table>
       </div>
+      <CancelModal refetch={refetch} selectedCancel={selectedCancel} />
     </div>
   );
 };

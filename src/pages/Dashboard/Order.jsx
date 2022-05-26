@@ -31,9 +31,13 @@ const Order = ({
       </td>
       <td>
         {!payment ? (
-          <button className="cursor-pointer btn btn-error btn-xs">
+          <label
+            onClick={() => setSelectedCancel(_id)}
+            for="cancel-modal"
+            className="cursor-pointer btn btn-error btn-xs"
+          >
             <FontAwesomeIcon icon={faCancel} />
-          </button>
+          </label>
         ) : (
           "done"
         )}
