@@ -6,19 +6,18 @@ import { auth } from "../../firebase.init";
 import feedbackIMG from "../../assets/images/feedback .png";
 import Loading from "../../Shared/Loading";
 import axios from "axios";
-import { async } from "@firebase/util";
 const Feedback = () => {
   //user
   const [user, loading] = useAuthState(auth);
   //ratting state
   // get user data
-  const [userInfo, setUserInfo] = useState("");
+  const [userIMG, setUserIMG] = useState("");
   useEffect(() => {
     (async function () {
       const { data } = await axios.get(
         `http://localhost:5000/user-image/${user?.email}`
       );
-      console.log(data);
+      setUserIMG(data?.image);
     })();
   }, [user?.email]);
 
@@ -33,7 +32,14 @@ const Feedback = () => {
 
   //handle feedback
   const onSubmit = (data) => {
-    const newFeedback = { ...data, ratting }(async function () {
+    const newFeedback = {
+      ...data,
+      email: user?.email,
+      image: userIMG,
+      ratting: ratting,
+    };
+    console.log(newFeedback);
+    (async function () {
       const { data } = await axios.post(
         "http://localhost:5000/feedbacks",
         newFeedback
