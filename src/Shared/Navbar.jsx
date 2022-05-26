@@ -27,7 +27,7 @@ const Navbar = ({ children }) => {
   useEffect(() => {
     (async function () {
       const { data } = await axios.get(
-        `http://localhost:5000/users/${user?.email}`
+        `https://rocky-waters-98626.herokuapp.com/users/${user?.email}`
       );
       setUserImage(data.photoURL);
     })();

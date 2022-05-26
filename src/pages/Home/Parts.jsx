@@ -6,7 +6,9 @@ const Parts = () => {
   const [parts, setParts] = useState([]);
   useEffect(() => {
     (async function () {
-      const { data } = await axios.get("http://localhost:5000/parts");
+      const { data } = await axios.get(
+        "https://rocky-waters-98626.herokuapp.com/parts"
+      );
       const parts = data.slice(0, 3);
       setParts(parts);
     })();

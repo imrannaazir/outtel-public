@@ -26,7 +26,9 @@ const Purchase = () => {
 
   useEffect(() => {
     (async function () {
-      const { data } = await axios.get(`http://localhost:5000/parts/${id.id}`);
+      const { data } = await axios.get(
+        `https://rocky-waters-98626.herokuapp.com/parts/${id.id}`
+      );
       setPart(data[0]);
     })();
   }, [id]);
@@ -54,7 +56,7 @@ const Purchase = () => {
     console.log(newOrder);
     (async function () {
       const { data } = await axios.post(
-        "http://localhost:5000/orders",
+        "https://rocky-waters-98626.herokuapp.com/orders",
         newOrder
       );
       console.log(data);

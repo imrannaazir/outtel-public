@@ -50,7 +50,7 @@ const AddParts = () => {
     // post data to db
     (async function () {
       const { data } = await axios.post(
-        "http://localhost:5000/parts",
+        "https://rocky-waters-98626.herokuapp.com/parts",
         partData
       );
       console.log(data);

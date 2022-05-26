@@ -15,7 +15,7 @@ const Feedback = () => {
   useEffect(() => {
     (async function () {
       const { data } = await axios.get(
-        `http://localhost:5000/user-image/${user?.email}`
+        `https://rocky-waters-98626.herokuapp.com/user-image/${user?.email}`
       );
       setUserIMG(data?.image);
     })();
@@ -42,7 +42,7 @@ const Feedback = () => {
     console.log(newFeedback);
     (async function () {
       const { data } = await axios.post(
-        "http://localhost:5000/feedbacks",
+        "https://rocky-waters-98626.herokuapp.com/feedbacks",
         newFeedback
       );
       console.log(data);

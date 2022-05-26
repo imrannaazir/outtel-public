@@ -5,7 +5,7 @@ import User from "./User";
 
 const MakeAdmin = () => {
   const { isLoading, error, data, refetch } = useQuery("allUser", () =>
-    axios.get("http://localhost:5000/users")
+    axios.get("https://rocky-waters-98626.herokuapp.com/users")
   );
 
   if (isLoading) return <Loading />;

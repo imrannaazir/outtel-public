@@ -8,7 +8,7 @@ import ManageOrder from "./ManageOrder";
 const ManageOrders = () => {
   const [selectedOrder, setSelectedOrder] = useState("");
   const { isLoading, error, data, refetch } = useQuery("getOrders", () =>
-    axios.get("http://localhost:5000/Orders", {
+    axios.get("https://rocky-waters-98626.herokuapp.com/Orders", {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },

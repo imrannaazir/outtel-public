@@ -11,11 +11,14 @@ const Orders = () => {
   const [user, loading] = useAuthState(auth);
   const [selectedCancel, setSelectedCancel] = useState("");
   const { isLoading, error, data, refetch } = useQuery("getOrders", () =>
-    axios.get(`http://localhost:5000/Orders/${user?.email}`, {
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    })
+    axios.get(
+      `https://rocky-waters-98626.herokuapp.com/Orders/${user?.email}`,
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      }
+    )
   );
 
   //order

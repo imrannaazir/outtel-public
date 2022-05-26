@@ -16,7 +16,9 @@ const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
     (async function () {
-      const { data } = await axios.get("http://localhost:5000/reviews");
+      const { data } = await axios.get(
+        "https://rocky-waters-98626.herokuapp.com/reviews"
+      );
       console.log(data);
       setReviews(data);
     })();

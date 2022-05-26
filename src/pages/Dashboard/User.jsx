@@ -5,7 +5,7 @@ import userIMG from "../../assets/images/user.jpg";
 const User = ({ i, refetch, user: { name, email, photoURL, role, _id } }) => {
   const handleRole = (email) => {
     console.log(email);
-    fetch(`http://localhost:5000/users/admin/${email}`, {
+    fetch(`https://rocky-waters-98626.herokuapp.com/users/admin/${email}`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

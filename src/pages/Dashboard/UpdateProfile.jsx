@@ -17,7 +17,7 @@ const UpdateProfile = () => {
   useEffect(() => {
     (async function () {
       const { data } = await axios.get(
-        `http://localhost:5000/users/${user?.email}`
+        `https://rocky-waters-98626.herokuapp.com/users/${user?.email}`
       );
       setUserDb(data);
     })();
@@ -74,7 +74,7 @@ const UpdateProfile = () => {
     console.log(updatedUser);
     (async function () {
       const { data } = await axios.put(
-        `http://localhost:5000/update-users/${user?.email},`,
+        `https://rocky-waters-98626.herokuapp.com/update-users/${user?.email},`,
         updatedUser
       );
       console.log(data);
