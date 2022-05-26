@@ -3,7 +3,7 @@ import React from "react";
 const ManageOrder = ({
   i,
   setSelectedOrder,
-  order: { image, part, email, _id },
+  order: { image, part, email, _id, status },
 }) => {
   return (
     <tr>
@@ -13,14 +13,14 @@ const ManageOrder = ({
       </td>
       <td>{part}</td>
       <td>{email}</td>
-      <td>Pending</td>
+      <td>{status === "delivered" ? "delivered" : "Pending"}</td>
       <td>
         <label
           onClick={() => setSelectedOrder(_id)}
           for="deliver-modal"
-          class="btn btn-xs"
+          class={`btn btn-xs ${status === "delivered" && "btn-disabled"}`}
         >
-          Yay!
+          Deliver Now
         </label>
       </td>
     </tr>

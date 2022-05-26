@@ -38,7 +38,7 @@ const ManageOrders = () => {
               <th>Product</th>
               <th>Email</th>
               <th>Status</th>
-              <th>Delivery</th>
+              <th>Deliver</th>
             </tr>
           </thead>
           <tbody>

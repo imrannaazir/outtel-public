@@ -1,8 +1,15 @@
+import axios from "axios";
 import React from "react";
 
 const DeliverModal = ({ selectedOrder, refetch }) => {
   const handleDeliver = () => {
-    refetch();
+    (async function () {
+      const { data } = await axios.put(
+        `http://localhost:5000/orders/${selectedOrder}`
+      );
+      console.log(data);
+      refetch();
+    })();
   };
   return (
     <div>
@@ -21,7 +28,7 @@ const DeliverModal = ({ selectedOrder, refetch }) => {
           </p>
           <div class="modal-action">
             <label onClick={handleDeliver} for="deliver-modal" class="btn">
-              Yay!
+              Confirm
             </label>
           </div>
         </div>
