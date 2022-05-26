@@ -46,9 +46,9 @@ const Reviews = () => {
         modules={[EffectCoverflow, Autoplay]}
         className="mySwiper "
       >
-        {reviews.map((review) => (
+        {reviews.map((review, i) => (
           <SwiperSlide>
-            <Review />
+            <Review key={i} review={review} />
           </SwiperSlide>
         ))}
       </Swiper>

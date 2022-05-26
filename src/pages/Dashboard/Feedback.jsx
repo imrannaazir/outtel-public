@@ -34,8 +34,9 @@ const Feedback = () => {
   const onSubmit = (data) => {
     const newFeedback = {
       ...data,
+      name: user?.displayName,
       email: user?.email,
-      image: userIMG,
+      image: userIMG || user?.photoURL || "",
       ratting: ratting,
     };
     console.log(newFeedback);
