@@ -2,7 +2,7 @@ import React from "react";
 
 const Banner = () => {
   return (
-    <div className="w-full relative">
+    <div className="w-full relative h-screen">
       <img
         className="w-full"
         src="https://i.ibb.co/HH2NDjg/banner.jpg"

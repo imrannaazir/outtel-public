@@ -4,13 +4,15 @@ import {
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import loginImage from "../../assets/images/login.png";
 import { auth } from "../../firebase.init";
 import useToken from "../../hooks/useToken";
 import Loading from "../../Shared/Loading";
 const Login = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
   // sign in with email and pass
   const [signInWithEmailAndPassword, eUser, eLoading, eError] =
     useSignInWithEmailAndPassword(auth);
@@ -35,7 +37,7 @@ const Login = () => {
     console.log(eError);
   }
   if (token) {
-    navigate("/");
+    navigate(from);
   }
   return (
     <div class="flex justify-center items-center min-h-screen bg-base-200">

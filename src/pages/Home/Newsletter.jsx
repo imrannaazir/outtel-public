@@ -9,7 +9,7 @@ const Newsletter = () => {
     >
       <div class="hero-overlay bg-opacity-75"></div>
       <div class="hero-content text-center text-neutral-content  lg:flex-row-reverse">
-        <div class="text-center lg:text-left">
+        <div class="text-center lg:text-left hidden lg:block">
           <h1 class="text-5xl font-bold">Contact Us!</h1>
           <p class="py-6">
             Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda

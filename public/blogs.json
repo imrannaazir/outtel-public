@@ -1,44 +1,37 @@
 [
   {
     "id": 1,
-    "title": "Difference between javascript and node js.",
-    "img": "https://i.ibb.co/VtHYrXs/1-js-vs-node.jpg",
+    "title": "How will you improve the performance of a React Application?",
+    "img": "https://www.filepicker.io/api/file/SVFQZQAyRpqJ31f6LNGe",
     "author": "Imran Nazir",
-    "blog": "Many of us do not know properly what are the actual differences between  Java Scrictp and Node JS. Today I'm gonna discuss some of the main differences between Javascript and node js. Java Script is actually single treated programming language. On the other hand Node, js is a runtime of JavaScript. Java Script is running in any web browser with a proper browser engine like the V8 engine for google chrome, and the JavaScript core engine for Safari. But Node JS is using the v8 engine directly. It actually helps us to use Javascript from outside of the browser."
+    "blog": "With React apps, we can expect a very fast user interface by default. As an application grows, developers may encounter performance issues. In this guide, we will discuss five important ways to optimize the performance of a React application, including pre-optimization techniques. Among them are: Keeping component state local when necessary Memoizing React components to prevent unnecessary re-rendering React code splitting using dynamic import() Windows or list virtualization in React React lazy loading of images"
   },
   {
     "id": 2,
-    "title": "When should you use nodejs and when should you use MongoDB",
-    "img": "https://i.ibb.co/Hhztygj/2-mdb-vs-node.jpg",
+    "title": "What are the different ways to manage a state in a React application?",
+    "img": "https://d585tldpucybw.cloudfront.net/sfimages/default-source/blogs/templates/social/reactt-light_1200x628.png?sfvrsn=43eb5f2a_2",
     "author": "Imran Nazir",
-    "blog": "In java script for back end most of the time we use Node JS and Mongodb. This two this plays in defferent ways. Node JS is actually a runtime of Java script that is used for making backend. On the other hand Mongodb is database. We use Mongodb for store our data of our site. MongoDB facilitate to store database in json(javascript object notation) (or simply when data in form of key value pair) this is very fast and efficient so you should use it when you have key value pair to store(json data). On the other site. It is very lightweight and fast. There has been over 200000 visits on this website in three weeks and minimal server resources has been able to handle it all. "
+    "blog": "Components in React have a built-in state object. The state is just a fancy term for a JavaScript data structure where you store assets that persist between component renderings. When a user changes states by interacting with your application, the UI may look completely different afterwards, as it is represented by the new state, rather than the old state. We need to properly manage four types of state in your React apps: Local State Local state is usually managed by using the useState hook in React. Global State Global state is data spread across multiple components. Server state is a simple concept, but it can be hard to maintain alongside all of our local and global UI states. URL state is often overlooked, but it is an important category of state. Many major parts of our application rely on URL state. "
   },
   {
     "id": 3,
-    "title": "What is the purpose of jwt and how does it work?",
-    "img": "https://i.ibb.co/645V52V/4-jwt.jpg",
+    "title": "How does prototypical inheritance work?",
+    "img": "https://mountain-bicycle.web.app/static/media/wetgu.83fc358b10387402cd96.PNG",
     "author": "Imran Nazir",
-    "blog": "JWT stands for JSON web token. we use JWT for Authorizing user in our website. Authorizing mean what can actually do a user. How do We use JWT? When a user login a web page we give him a temporary token. And it has a expire date. When he again come again web site later. We authenticate with his token by jwt. If matched than we give him access to the site. Other JWT doesn't allow him in the site"
+    "blog": "Every object has an internal and hidden property known as a prototype. Javascript's prototypal inheritance feature adds methods and properties to objects. An object can inherit the properties and methods of another object using this method. For getting and setting the prototype of an object, we use Object.getPrototypeOf and Object.setPrototype."
   },
   {
     "id": 4,
-    "title": "Difference between javascript and node js.",
+    "title": "What is a unit test? Why should write unit tests?",
     "img": "https://i.ibb.co/N617wS3/3-sql-nosql.jpg",
     "author": "Imran Nazir",
-    "blog": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, blanditiis id quisquam unde dicta magnam veniam accusamus in fuga ipsa quaerat autem iure quos eum cupiditate esse minima deleniti eveniet aperiam dolore culpa ullam. Unde itaque fugit nemo nostrum non omnis ducimus illum tempore obcaecati? Delectus unde sint laudantium culpa eaque enim! Eaque hic qui consequuntur accusamus illo minus ea vel quod, magnam facilis? Explicabo corporis, aperiam ipsam dignissimos illo quia quas libero, quae doloribus consectetur enim id nesciunt. Tempora corrupti facilis voluptate reprehenderit laborum tempore excepturi debitis, natus deleniti quod? Obcaecati est ipsa sit porro deleniti! Quos, adipisci hic."
+    "blog": "What is a unit test? unit testing is a method of testing the smallest pieces of code, typically individual functions, in isolation. These small pieces of code are called units. A unit can be a line of code, a class, or a method. Why should write unit tests? Unit testing ensures that all code meets quality standards before it's deployed. This ensures a reliable engineering environment where quality is paramount. Over the course of the product development life cycle, unit testing saves time and money and helps developers write better code, more efficiently."
   },
   {
     "id": 5,
-    "title": "Difference between javascript and node js.",
+    "title": "You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?",
     "img": "https://i.ibb.co/N617wS3/3-sql-nosql.jpg",
     "author": "Imran Nazir",
-    "blog": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, blanditiis id quisquam unde dicta magnam veniam accusamus in fuga ipsa quaerat autem iure quos eum cupiditate esse minima deleniti eveniet aperiam dolore culpa ullam. Unde itaque fugit nemo nostrum non omnis ducimus illum tempore obcaecati? Delectus unde sint laudantium culpa eaque enim! Eaque hic qui consequuntur accusamus illo minus ea vel quod, magnam facilis? Explicabo corporis, aperiam ipsam dignissimos illo quia quas libero, quae doloribus consectetur enim id nesciunt. Tempora corrupti facilis voluptate reprehenderit laborum tempore excepturi debitis, natus deleniti quod? Obcaecati est ipsa sit porro deleniti! Quos, adipisci hic."
-  },
-  {
-    "id": 6,
-    "title": "Difference between javascript and node js.",
-    "img": "https://i.ibb.co/N617wS3/3-sql-nosql.jpg",
-    "author": "Imran Nazir",
-    "blog": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, blanditiis id quisquam unde dicta magnam veniam accusamus in fuga ipsa quaerat autem iure quos eum cupiditate esse minima deleniti eveniet aperiam dolore culpa ullam. Unde itaque fugit nemo nostrum non omnis ducimus illum tempore obcaecati? Delectus unde sint laudantium culpa eaque enim! Eaque hic qui consequuntur accusamus illo minus ea vel quod, magnam facilis? Explicabo corporis, aperiam ipsam dignissimos illo quia quas libero, quae doloribus consectetur enim id nesciunt. Tempora corrupti facilis voluptate reprehenderit laborum tempore excepturi debitis, natus deleniti quod? Obcaecati est ipsa sit porro deleniti! Quos, adipisci hic."
+    "blog": "We can use find, to get the specific name product. As example, const products = [x,y,z]; Here ,x,y,z are object where every object of the array contains a name. We can create a function to find product by its name. if (product.name==='searched name') matched, then this function will return the product."
   }
 ]

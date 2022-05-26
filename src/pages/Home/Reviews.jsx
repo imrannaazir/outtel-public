@@ -23,7 +23,7 @@ const Reviews = () => {
   }, []);
   return (
     <div className="">
-      <p className="text-4xl font-bold font-serif text-center my-6">
+      <p className="text-4xl font-bold font-serif text-center my-6 ">
         TESTIMONIALS
       </p>
       <Swiper

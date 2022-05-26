@@ -19,15 +19,17 @@ const DeliverModal = ({ selectedOrder, refetch }) => {
       <input type="checkbox" id="deliver-modal" class="modal-toggle" />
       <div class="modal modal-bottom sm:modal-middle">
         <div class="modal-box">
-          <h3 class="font-bold text-lg">
-            Congratulations random Interner user!-{selectedOrder}
-          </h3>
-          <p class="py-4">
-            You've been selected for a chance to get one year of subscription to
-            use Wikipedia for free!
-          </p>
+          <h3 class="font-bold text-lg">Confirm delivered!</h3>
+          <p class="py-4">Are you sure you want to delivered this order?</p>
           <div class="modal-action">
-            <label onClick={handleDeliver} for="deliver-modal" class="btn">
+            <label for="deliver-modal" class="btn">
+              Cancel
+            </label>
+            <label
+              onClick={handleDeliver}
+              for="deliver-modal"
+              class="btn btn-success"
+            >
               Confirm
             </label>
           </div>
