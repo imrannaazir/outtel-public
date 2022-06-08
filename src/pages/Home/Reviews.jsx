@@ -12,6 +12,7 @@ import "./styles.css";
 import { EffectCoverflow, Autoplay } from "swiper";
 import Review from "./Review";
 import axios from "axios";
+import Loading from "../../Shared/Loading";
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
@@ -19,10 +20,11 @@ const Reviews = () => {
       const { data } = await axios.get(
         "https://rocky-waters-98626.herokuapp.com/reviews"
       );
-      console.log(data);
       setReviews(data);
     })();
   }, []);
+  console.log(reviews);
+  if (reviews.length === 0) return <Loading />;
   return (
     <div className="">
       <p className="text-4xl font-bold font-serif text-center my-6 ">

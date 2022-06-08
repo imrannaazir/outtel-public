@@ -4,7 +4,6 @@ import React from "react";
 import quote from "../../assets/icons/quote.svg";
 import userIMG from "../../assets/images/user.jpg";
 const Review = (review) => {
-  console.log(review);
   return (
     <div class="card w-[350px] bg-base-100 shadow-xl">
       <div className="w-16 mt-4 ml-4">

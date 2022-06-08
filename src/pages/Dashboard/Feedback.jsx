@@ -6,6 +6,7 @@ import { auth } from "../../firebase.init";
 import feedbackIMG from "../../assets/images/feedback .png";
 import Loading from "../../Shared/Loading";
 import axios from "axios";
+import toast from "react-hot-toast";
 const Feedback = () => {
   //user
   const [user, loading] = useAuthState(auth);
@@ -28,6 +29,7 @@ const Feedback = () => {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm({ mode: onchange });
 
   //handle feedback
@@ -46,6 +48,8 @@ const Feedback = () => {
         newFeedback
       );
       console.log(data);
+      toast.success("You have successfully submitted a review!");
+      reset();
     })();
   };
   if (loading) return <Loading />;
@@ -82,6 +86,14 @@ const Feedback = () => {
                     value: true,
                     message: "Please write a feedback!",
                   },
+                  minLength: {
+                    value: 270,
+                    message: "You have to put at least 50 words",
+                  },
+                  maxLength: {
+                    value: 290,
+                    message: "You have to put under 55 words",
+                  },
                 })}
                 type="text"
                 placeholder="Write a feedback"
@@ -89,6 +101,16 @@ const Feedback = () => {
               />
               <label class="label">
                 {errors.feedback?.type === "required" && (
+                  <span class="label-text-alt text-error">
+                    {errors.feedback.message}
+                  </span>
+                )}
+                {errors.feedback?.type === "minLength" && (
+                  <span class="label-text-alt text-error">
+                    {errors.feedback.message}
+                  </span>
+                )}
+                {errors.feedback?.type === "maxLength" && (
                   <span class="label-text-alt text-error">
                     {errors.feedback.message}
                   </span>
