@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import Loading from "../../Shared/Loading";
 import Part from "./Part";
 
 const Parts = () => {
@@ -13,6 +14,8 @@ const Parts = () => {
       setParts(parts);
     })();
   }, []);
+  console.log();
+  if (parts.length === 0) return <Loading />;
   return (
     <div id="parts">
       {parts.map((part, i) => (
