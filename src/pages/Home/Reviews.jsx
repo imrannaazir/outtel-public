@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import React from "react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -13,8 +12,24 @@ import { EffectCoverflow, Autoplay } from "swiper";
 import Review from "./Review";
 import axios from "axios";
 import Loading from "../../Shared/Loading";
+import { useQuery } from "react-query";
+import toast from "react-hot-toast";
 const Reviews = () => {
-  const [reviews, setReviews] = useState([]);
+  const {
+    isLoading,
+    error,
+    data: reviews,
+  } = useQuery("reviewData", () =>
+    axios
+      .get("https://rocky-waters-98626.herokuapp.com/reviews")
+      .then((res) => res.data)
+  );
+  //is loading
+  if (isLoading) return <Loading />;
+  //is any error
+  if (error) return toast.error(error.message);
+
+  /*  const [reviews, setReviews] = useState([]);
   useEffect(() => {
     (async function () {
       const { data } = await axios.get(
@@ -24,7 +39,7 @@ const Reviews = () => {
     })();
   }, []);
   console.log(reviews);
-  if (reviews.length === 0) return <Loading />;
+  if (reviews.length === 0) return <Loading />; */
   return (
     <div className="">
       <p className="text-4xl font-bold font-serif text-center my-6 ">
