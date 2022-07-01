@@ -10,17 +10,17 @@ const NavLinks = () => {
         </HashLink>
       </li>
       <li>
-        <HashLink to="/#rockets" smooth>
-          Rockets
+        <HashLink to="/#new_arrivals" smooth>
+          Explore
         </HashLink>
       </li>
       <li>
-        <HashLink to="/#drones" smooth>
-          Drones
+        <HashLink to="/#processors" smooth>
+          Processors
         </HashLink>
       </li>
       <li>
-        <HashLink to="/#partners" smooth>
+        <HashLink to="/#graphics_cards" smooth>
           Partners
         </HashLink>
       </li>

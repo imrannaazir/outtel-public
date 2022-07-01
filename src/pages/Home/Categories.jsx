@@ -6,17 +6,17 @@ const Categories = () => {
     {
       name: "New Arrivals",
       img: "https://i.ibb.co/J2tWfTJ/new-arrivals.png",
-      id: "#new_arraivals",
+      id: "new_arrivals",
     },
     {
       name: "Processors",
       img: "https://i.ibb.co/VgNyFXx/processor.png",
-      id: "#Processors",
+      id: "processors",
     },
     {
       name: "Graphics Card",
       img: "https://i.ibb.co/ng0GxPM/graphics-card.png",
-      id: "#new_arraivals",
+      id: "graphics_cards",
     },
   ];
   return (

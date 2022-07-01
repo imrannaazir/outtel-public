@@ -31,8 +31,8 @@ const Navbar = () => {
     >
       {/* first part of navbar ,, logo here */}
       <div class="navbar-start">
-        <a href="#home" class="">
-          <img className="h-12" src="#" alt="" />
+        <a href="#home" class="text-2xl">
+          Outtel
         </a>
       </div>
 
