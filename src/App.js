@@ -26,39 +26,36 @@ import Navbar from './Shared/Navbar';
 
 function App() {
   return (
-    <div className='bg-base-200'>
-      <Navbar>
-        <Toaster />
-        <Routes>
-          {/* root or public route */}
-          <Route path='/' element={<Home />} />
-          <Route path='/parts' element={<Parts />} />
-          <Route path='/blogs' element={<Blogs />} />
-          <Route path='/portfolio' element={<Portfolio />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
-          <Route path='*' element={<NotFound />} />
+    <div className=''>
 
-          {/* protected routes */}
-          <Route path='/purchase/:id' element={<RequiredAuth><Purchase /></RequiredAuth>} />
-          <Route path='/payment/:id' element={<RequiredAuth><Payment /></RequiredAuth>} />
+      <Toaster />
+      <Routes>
+        {/* root or public route */}
+        <Route path='/' element={<Home />} />
+        <Route path='/parts' element={<Parts />} />
+        <Route path='/blogs' element={<Blogs />} />
+        <Route path='/portfolio' element={<Portfolio />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='*' element={<NotFound />} />
 
-          <Route path='/dashboard' element={<RequiredAuth><Dashboard /></RequiredAuth>} >
-            <Route index element={<UpdateProfile />} />
-            <Route path='orders' element={<Orders />} />
-            <Route path='reviews' element={<Reviews />} />
-            <Route path='feedback' element={<Feedback />} />
-            <Route path='manage-orders' element={<ManageOrders />} />
-            <Route path='add-part' element={<AddParts />} />
-            <Route path='make-admin' element={<MakeAdmin />} />
-            <Route path='manage-products' element={<ManageProducts />} />
+        {/* protected routes */}
+        <Route path='/purchase/:id' element={<RequiredAuth><Purchase /></RequiredAuth>} />
+        <Route path='/payment/:id' element={<RequiredAuth><Payment /></RequiredAuth>} />
 
+        <Route path='/dashboard' element={<RequiredAuth><Dashboard /></RequiredAuth>} >
+          <Route index element={<UpdateProfile />} />
+          <Route path='orders' element={<Orders />} />
+          <Route path='reviews' element={<Reviews />} />
+          <Route path='feedback' element={<Feedback />} />
+          <Route path='manage-orders' element={<ManageOrders />} />
+          <Route path='add-part' element={<AddParts />} />
+          <Route path='make-admin' element={<MakeAdmin />} />
+          <Route path='manage-products' element={<ManageProducts />} />
+        </Route>
+      </Routes>
+      {/* <Footer /> */}
 
-
-          </Route>
-        </Routes>
-        {/* <Footer /> */}
-      </Navbar>
     </div>
   );
 }

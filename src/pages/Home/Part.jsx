@@ -1,4 +1,8 @@
-import { faBagShopping, faWarehouse } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowRight,
+  faBagShopping,
+  faWarehouse,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { useNavigate } from "react-router-dom";
@@ -9,7 +13,31 @@ const Part = ({
 }) => {
   const navigate = useNavigate();
   return (
-    <div class="hero bg-base-200 border-2">
+    <div class="card w-96 bg-base-100 shadow-xl">
+      <figure>
+        <img src={image} className="w-full h-72" alt="Shoes" />
+      </figure>
+      <div class="card-body">
+        <div class="badge badge-secondary">NEW</div>
+        <h2 class="card-title">{name}</h2>
+        <p>{description.slice(0, 90)}..</p>
+        <div className="flex gap-2 text-xl">
+          <span className="text-success">${price}</span>
+          <span className="line-through text-error">
+            ${parseInt(price) + 103}
+          </span>
+        </div>
+        <div class="card-actions justify-end">
+          <button
+            onClick={() => navigate(`/purchase/${_id}`)}
+            class="btn btn-primary btn-outline btn-sm flex justify-center items-center gap-1"
+          >
+            buy now <FontAwesomeIcon icon={faArrowRight} />
+          </button>
+        </div>
+      </div>
+    </div>
+    /*  <div class="hero bg-base-200 border-2">
       <div class="grid lg:grid-cols-2 justify-items-center my-10 w-[80%] mx-auto">
         <div className={i % 2 === 0 ? "order-1" : "order-2"}>
           <img src={image} class="max-w-sm rounded-lg shadow-2xl" alt="" />
@@ -44,7 +72,7 @@ const Part = ({
           </button>
         </div>
       </div>
-    </div>
+    </div> */
   );
 };
 

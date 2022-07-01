@@ -6,10 +6,12 @@ import Newsletter from "./Newsletter";
 import OurClients from "./OurClients";
 import Parts from "./Parts";
 import Reviews from "./Reviews";
+import Navbar from "../../Shared/Navbar";
 
 const Home = () => {
   return (
-    <div className="bg-base-200 mt-16">
+    <div className="">
+      <Navbar />
       <Banner />
       <Parts />
       <Reviews />

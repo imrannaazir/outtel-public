@@ -38,9 +38,10 @@ const Dashboard = () => {
           </svg>
         </label>
       </div>
+      {/* aside sidebar */}
       <div class="drawer-side">
         <label for="my-drawer-2" class="drawer-overlay"></label>
-        <ul class="menu p-4 overflow-y-auto w-80  text-base-content">
+        <ul class="menu p-4 overflow-y-auto w-80 text-base-content bg-base-100 lg:bg-transparent">
           {/* <!-- Sidebar content here --> */}
           <li></li>
           <li>

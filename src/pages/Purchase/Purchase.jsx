@@ -85,7 +85,7 @@ const Purchase = () => {
   if (loading) return <Loading />;
 
   return (
-    <div class="hero bg-base-200 border-2 mt-16">
+    <div class="hero  border-2 ">
       <div class="grid lg:grid-cols-2 justify-items-center my-10 w-[80%] mx-auto">
         <div className="flex justify-center items-center">
           <img src={image} class="max-w-sm rounded-lg shadow-2xl" alt="" />
