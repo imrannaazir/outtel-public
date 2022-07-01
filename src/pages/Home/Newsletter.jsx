@@ -7,9 +7,9 @@ const Newsletter = () => {
       style={{ backgroundImage: `url(${bannerIMG})` }}
       class="hero bg-cover h-screen gap-10 bg-fixed"
     >
-      <div class="hero-overlay bg-opacity-75"></div>
+      <div class="hero-overlay bg-primary bg-opacity-75"></div>
       <div class="hero-content text-center text-neutral-content  lg:flex-row-reverse">
-        <div class="text-center lg:text-left hidden lg:block">
+        <div class="text-center lg:text-left hidden lg:block text-base-100">
           <h1 class="text-5xl font-bold">Contact Us!</h1>
           <p class="py-6">
             Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda

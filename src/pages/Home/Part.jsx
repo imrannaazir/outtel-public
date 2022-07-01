@@ -13,9 +13,13 @@ const Part = ({
 }) => {
   const navigate = useNavigate();
   return (
-    <div class="card w-96 bg-base-100 shadow-xl">
+    <div class="group card w-96 bg-base-100 shadow-xl">
       <figure>
-        <img src={image} className="w-full h-72" alt="Shoes" />
+        <img
+          src={image}
+          className="w-full h-80 group-hover:scale-110 duration-200"
+          alt="Shoes"
+        />
       </figure>
       <div class="card-body">
         <div class="badge badge-secondary">NEW</div>

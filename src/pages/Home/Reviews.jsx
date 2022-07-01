@@ -42,14 +42,12 @@ const Reviews = () => {
   if (reviews.length === 0) return <Loading />; */
   return (
     <div className="">
-      <p className="text-4xl font-bold font-serif text-center my-6 ">
-        TESTIMONIALS
-      </p>
+      <p className="text-4xl text-center my-4 ">What Our Client Say</p>
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={4}
+        slidesPerView={3}
         coverflowEffect={{
           rotate: 0,
           stretch: 0,
@@ -58,7 +56,7 @@ const Reviews = () => {
           slideShadows: true,
         }}
         autoplay={{
-          delay: 2000,
+          delay: 4000,
           disableOnInteraction: false,
         }}
         loop={true}

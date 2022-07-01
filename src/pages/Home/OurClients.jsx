@@ -18,15 +18,12 @@ const OurClients = () => {
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 7000,
-    autoplaySpeed: 0,
+    autoplaySpeed: 2000,
     cssEase: "linear",
   };
   return (
     <div className="p-16 bg-base-100 mt-20">
-      <p className="text-center mb-5 text-4xl font-bold font-serif">
-        OUR CLIENTS
-      </p>
+      <p className="text-center mb-5 text-3xl font-bold ">OUR CLIENTS</p>
 
       <div>
         <Slider {...settings} className="flex">

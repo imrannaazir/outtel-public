@@ -7,12 +7,18 @@ import OurClients from "./OurClients";
 import Parts from "./Parts";
 import Reviews from "./Reviews";
 import Navbar from "../../Shared/Navbar";
+import OfferBanner from "./OfferBanner";
+import Categories from "./Categories";
 
 const Home = () => {
   return (
     <div className="">
       <Navbar />
       <Banner />
+      <Categories />
+      <Parts />
+      <OfferBanner />
+      <Parts />
       <Parts />
       <Reviews />
       <Analysis />
