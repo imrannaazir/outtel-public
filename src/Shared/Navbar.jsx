@@ -129,7 +129,7 @@ const Navbar = ({ children }) => {
   useEffect(() => {
     (async function () {
       const { data } = await axios.get(
-        `https://rocky-waters-98626.herokuapp.com/users/${user?.email}`
+        `https://historic-cuyahoga-valley-56137.herokuapp.com/users/${user?.email}`
       );
       setUserImage(data.photoURL);
     })();

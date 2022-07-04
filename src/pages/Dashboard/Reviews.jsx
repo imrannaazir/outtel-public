@@ -10,7 +10,7 @@ const Reviews = () => {
   useEffect(() => {
     (async function () {
       const { data } = await axios.get(
-        `https://rocky-waters-98626.herokuapp.com/reviews/${user?.email}`
+        `https://historic-cuyahoga-valley-56137.herokuapp.com/reviews/${user?.email}`
       );
       console.log(data);
       setReviews(data);

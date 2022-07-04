@@ -6,7 +6,7 @@ const DeleteModal = ({ selectedPart, refetch }) => {
   const handleDelete = () => {
     (async function () {
       const { data } = await axios.delete(
-        `https://rocky-waters-98626.herokuapp.com/parts/${selectedPart}`
+        `https://historic-cuyahoga-valley-56137.herokuapp.com/parts/${selectedPart}`
       );
       console.log(data);
       refetch();

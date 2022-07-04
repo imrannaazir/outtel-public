@@ -28,7 +28,7 @@ const Purchase = () => {
   useEffect(() => {
     (async function () {
       const { data } = await axios.get(
-        `https://rocky-waters-98626.herokuapp.com/parts/${id.id}`
+        `https://historic-cuyahoga-valley-56137.herokuapp.com/parts/${id.id}`
       );
       setPart(data[0]);
     })();
@@ -57,7 +57,7 @@ const Purchase = () => {
     console.log(newOrder);
     (async function () {
       const { data } = await axios.post(
-        "https://rocky-waters-98626.herokuapp.com/orders",
+        "https://historic-cuyahoga-valley-56137.herokuapp.com/orders",
         newOrder
       );
       console.log(data);

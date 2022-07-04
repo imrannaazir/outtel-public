@@ -5,7 +5,7 @@ const DeliverModal = ({ selectedOrder, refetch }) => {
   const handleDeliver = () => {
     (async function () {
       const { data } = await axios.put(
-        `https://rocky-waters-98626.herokuapp.com/orders/${selectedOrder}`
+        `https://historic-cuyahoga-valley-56137.herokuapp.com/orders/${selectedOrder}`
       );
       console.log(data);
       refetch();

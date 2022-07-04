@@ -5,12 +5,15 @@ import userIMG from "../../assets/images/user.jpg";
 const User = ({ i, refetch, user: { name, email, photoURL, role, _id } }) => {
   const handleRole = (email) => {
     console.log(email);
-    fetch(`https://rocky-waters-98626.herokuapp.com/users/admin/${email}`, {
-      method: "PUT",
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    })
+    fetch(
+      `https://historic-cuyahoga-valley-56137.herokuapp.com/users/admin/${email}`,
+      {
+        method: "PUT",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      }
+    )
       .then((res) => {
         if (res.status === 403) {
           toast.error("Failed to Make an admin");

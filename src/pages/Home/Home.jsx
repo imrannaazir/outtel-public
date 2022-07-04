@@ -9,6 +9,8 @@ import Reviews from "./Reviews";
 import Navbar from "../../Shared/Navbar";
 import OfferBanner from "./OfferBanner";
 import Categories from "./Categories";
+import GraphicsCards from "./GraphicsCards";
+import Processors from "./Processors";
 
 const Home = () => {
   return (
@@ -18,8 +20,8 @@ const Home = () => {
       <Categories />
       <Parts />
       <OfferBanner />
-      <Parts />
-      <Parts />
+      <Processors />
+      <GraphicsCards />
       <Reviews />
       <Analysis />
       <OurClients />

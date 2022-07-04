@@ -21,7 +21,7 @@ const Reviews = () => {
     data: reviews,
   } = useQuery("reviewData", () =>
     axios
-      .get("https://rocky-waters-98626.herokuapp.com/reviews")
+      .get("https://historic-cuyahoga-valley-56137.herokuapp.com/reviews")
       .then((res) => res.data)
   );
   //is loading
@@ -33,7 +33,7 @@ const Reviews = () => {
   useEffect(() => {
     (async function () {
       const { data } = await axios.get(
-        "https://rocky-waters-98626.herokuapp.com/reviews"
+        "https://historic-cuyahoga-valley-56137.herokuapp.com/reviews"
       );
       setReviews(data);
     })();

@@ -9,7 +9,7 @@ const useToken = (user) => {
     if (email) {
       (async () => {
         const { data } = await axios.put(
-          `https://rocky-waters-98626.herokuapp.com/users/${email}`,
+          `https://historic-cuyahoga-valley-56137.herokuapp.com/users/${email}`,
           currentUser
         );
         const accessToken = data.token;

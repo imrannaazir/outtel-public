@@ -16,7 +16,7 @@ const Feedback = () => {
   useEffect(() => {
     (async function () {
       const { data } = await axios.get(
-        `https://rocky-waters-98626.herokuapp.com/user-image/${user?.email}`
+        `https://historic-cuyahoga-valley-56137.herokuapp.com/user-image/${user?.email}`
       );
       setUserIMG(data?.image);
     })();
@@ -44,7 +44,7 @@ const Feedback = () => {
     console.log(newFeedback);
     (async function () {
       const { data } = await axios.post(
-        "https://rocky-waters-98626.herokuapp.com/feedbacks",
+        "https://historic-cuyahoga-valley-56137.herokuapp.com/feedbacks",
         newFeedback
       );
       console.log(data);

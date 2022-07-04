@@ -17,7 +17,7 @@ const UpdateProfile = () => {
   useEffect(() => {
     (async function () {
       const { data } = await axios.get(
-        `https://rocky-waters-98626.herokuapp.com/users/${user?.email}`
+        `https://historic-cuyahoga-valley-56137.herokuapp.com/users/${user?.email}`
       );
       setUserDb(data);
     })();
@@ -74,7 +74,7 @@ const UpdateProfile = () => {
     console.log(updatedUser);
     (async function () {
       const { data } = await axios.put(
-        `https://rocky-waters-98626.herokuapp.com/update-users/${user?.email},`,
+        `https://historic-cuyahoga-valley-56137.herokuapp.com/update-users/${user?.email},`,
         updatedUser
       );
       console.log(data);

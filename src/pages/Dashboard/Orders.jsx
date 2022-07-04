@@ -12,7 +12,7 @@ const Orders = () => {
   const [selectedCancel, setSelectedCancel] = useState("");
   const { isLoading, error, data, refetch } = useQuery("getOrders", () =>
     axios.get(
-      `https://rocky-waters-98626.herokuapp.com/Orders/${user?.email}`,
+      `https://historic-cuyahoga-valley-56137.herokuapp.com/Orders/${user?.email}`,
       {
         headers: {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,
