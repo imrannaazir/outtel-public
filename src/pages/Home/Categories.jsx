@@ -22,7 +22,7 @@ const Categories = () => {
   return (
     <div className="my-6">
       <p className="text-3xl text-center my-2">Categories</p>
-      <div className="flex justify-center gap-6">
+      <div className="flex justify-center flex-wrap gap-6">
         {categories.map((category, i) => (
           <Category key={i} category={category} />
         ))}

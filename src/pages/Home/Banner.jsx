@@ -13,8 +13,10 @@ const Banner = () => {
         <div class="hidden lg:block">
           <img src="https://i.ibb.co/mJzXNM3/outtel-one-img-1.png" alt="" />
         </div>
-        <div class="max-w-md text-base-100">
-          <p>Biggest Tech Manufacturer</p>
+        <div class="max-w-md text-base-100 text-2xl text-left">
+          <p className="font-[Satisfy] text-yellow-300">
+            Biggest Tech Manufacturer
+          </p>
           <h1 class="mb-5 text-9xl font-bold uppercase">outtel tech</h1>
           <p class="mb-5">10% offer for next 30 days.</p>
           <button class="btn btn-primary">Buy now</button>

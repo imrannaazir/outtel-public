@@ -47,7 +47,7 @@ const Reviews = () => {
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={3}
+        slidesPerView={3.1}
         coverflowEffect={{
           rotate: 0,
           stretch: 0,
@@ -61,6 +61,17 @@ const Reviews = () => {
         }}
         loop={true}
         modules={[EffectCoverflow, Autoplay]}
+        breakpoints={{
+          0: {
+            slidesPerView: 1.1,
+          },
+          768: {
+            slidesPerView: 1.7,
+          },
+          1024: {
+            slidesPerView: 3.1,
+          },
+        }}
         className="mySwiper "
       >
         {reviews.map((review, i) => (
