@@ -1,5 +1,6 @@
 import React from "react";
 import Category from "./Category";
+import Heading from "./Heading";
 
 const Categories = () => {
   const categories = [
@@ -20,8 +21,8 @@ const Categories = () => {
     },
   ];
   return (
-    <div className="my-6">
-      <p className="text-3xl text-center my-2">Categories</p>
+    <div className="">
+      <Heading>Categories</Heading>
       <div className="flex justify-center flex-wrap gap-6">
         {categories.map((category, i) => (
           <Category key={i} category={category} />

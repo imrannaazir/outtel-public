@@ -4,6 +4,7 @@ import Loading from "../../Shared/Loading";
 import { useQuery } from "react-query";
 import toast from "react-hot-toast";
 import Part from "./Part";
+import Heading from "./Heading";
 
 const GraphicsCards = () => {
   const { isLoading, error, data } = useQuery("graphicsCardsData", () =>
@@ -20,7 +21,7 @@ const GraphicsCards = () => {
   if (error) return toast.error(error.message);
   return (
     <div>
-      <p className="text-3xl text-center font-semibold my-6">Graphics Cards</p>
+      <Heading>Graphics Cards</Heading>
       <div id="graphics_cards" className="flex justify-center gap-6 flex-wrap">
         {graphicsCards.map((part, i) => (
           <Part key={i} i={i} part={part} />

@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick/lib/slider";
 import axios from "axios";
+import Heading from "./Heading";
 
 const OurClients = () => {
   const [logos, setLogos] = useState([]);
@@ -23,7 +24,7 @@ const OurClients = () => {
   };
   return (
     <div className="p-16 bg-base-100 mt-20">
-      <p className="text-center mb-5 text-3xl font-bold ">OUR CLIENTS</p>
+      <Heading>OUR CLIENTS</Heading>
 
       <div>
         <Slider {...settings} className="flex">

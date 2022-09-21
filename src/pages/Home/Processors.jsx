@@ -4,6 +4,7 @@ import Loading from "../../Shared/Loading";
 import { useQuery } from "react-query";
 import toast from "react-hot-toast";
 import Part from "./Part";
+import Heading from "./Heading";
 
 const Processors = () => {
   const { isLoading, error, data } = useQuery("processorsData", () =>
@@ -18,7 +19,7 @@ const Processors = () => {
   if (error) return toast.error(error.message);
   return (
     <div>
-      <p className="text-3xl text-center font-semibold my-6">Processors</p>
+      <Heading>Processors</Heading>
       <div id="processors" className="flex justify-center gap-6 flex-wrap">
         {processors.map((part, i) => (
           <Part key={i} i={i} part={part} />

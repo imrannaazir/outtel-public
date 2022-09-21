@@ -14,6 +14,7 @@ import axios from "axios";
 import Loading from "../../Shared/Loading";
 import { useQuery } from "react-query";
 import toast from "react-hot-toast";
+import Heading from "./Heading";
 const Reviews = () => {
   const {
     isLoading,
@@ -42,7 +43,7 @@ const Reviews = () => {
   if (reviews.length === 0) return <Loading />; */
   return (
     <div className="">
-      <p className="text-4xl text-center my-4 ">What Our Client Say</p>
+      <Heading>What Our Client Say</Heading>
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
