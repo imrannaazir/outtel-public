@@ -1,5 +1,5 @@
 import React from "react";
-import bannerIMG from "../../assets/images/banner.png";
+import bannerIMG from "../../assets/images/banner.webp";
 
 const Newsletter = () => {
   return (

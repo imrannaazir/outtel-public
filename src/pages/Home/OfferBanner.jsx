@@ -4,7 +4,8 @@ const OfferBanner = () => {
   return (
     <div className="relative">
       <img
-        src="https://i.ibb.co/9gQMHMC/Ecommerce-banner-smartwatch-electronics-store-product-promotion-dropshipping-offer.jpg"
+        className="min-w-full"
+        src="https://i.ibb.co/9w920QF/offer.webp"
         alt=""
       />
       <p className="absolute text-5xl font-bold top-[30%] left-[25%] text-yellow-200 uppercase -rotate-12">
