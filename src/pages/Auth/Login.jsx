@@ -36,7 +36,7 @@ const Login = () => {
   if (eError || gError) {
     console.log(eError);
   }
-  if (token) {
+  if (token || gUser || eUser) {
     navigate(from);
   }
   return (
