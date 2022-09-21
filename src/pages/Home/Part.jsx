@@ -6,11 +6,11 @@ import { useNavigate } from "react-router-dom";
 const Part = ({ part: { image, name, description, price, _id } }) => {
   const navigate = useNavigate();
   return (
-    <div class="group card w-96 bg-base-100 shadow-xl">
+    <div class="group card w-96 bg-base-100 shadow-primary hover:shadow-primary shadow-md hover:shadow-lg ">
       <figure>
         <img
           src={image}
-          className="w-full h-80 group-hover:scale-110 duration-200"
+          className="w-[70%] h-64 pt-4 group-hover:scale-110 duration-200"
           alt="Shoes"
         />
       </figure>
