@@ -4,12 +4,16 @@ import Typed from "react-typed";
 
 const PortfolioBanner = () => {
   return (
-    <div class="hero min-h-screen bg-base-200">
-      <div class=" lg:flex justify-start gap-10  pl-[10%] w-full ">
+    <div className="hero min-h-screen bg-base-200">
+      <div className=" lg:flex justify-start gap-10  pl-[10%] w-full ">
         <div className="relative group w-[384px]">
           <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-accent rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
           <div className=" relative flex justify-start ">
-            <img src={me} class="max-w-sm rounded-full shadow-2xl  " alt="" />
+            <img
+              src={me}
+              className="max-w-sm rounded-full shadow-2xl  "
+              alt=""
+            />
           </div>
         </div>
 

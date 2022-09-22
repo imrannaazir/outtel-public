@@ -18,7 +18,7 @@ const ManageOrder = ({
         <label
           onClick={() => setSelectedOrder(_id)}
           for="deliver-modal"
-          class={`btn btn-xs ${status === "delivered" && "btn-disabled"}`}
+          className={`btn btn-xs ${status === "delivered" && "btn-disabled"}`}
         >
           Deliver Now
         </label>

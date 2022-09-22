@@ -13,7 +13,7 @@ const Parts = () => {
       .then((res) => res.data)
   );
   const parts = data?.slice(0, 6);
-  console.log(parts);
+
   //is loading
   if (isLoading) return <Loading />;
   //is any error

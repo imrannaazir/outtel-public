@@ -25,56 +25,56 @@ const Navbar = () => {
 
   return (
     <div
-      class={`navbar text-base-100 transform duration-200 px-8 ${
+      className={`navbar text-base-100 transform duration-200 px-8 ${
         nav || "bg-primary"
       } fixed top-0 z-50 w-[100%]`}
     >
       {/* first part of navbar ,, logo here */}
-      <div class="navbar-start">
-        <a href="#home" class="text-2xl">
+      <div className="navbar-start">
+        <a href="#home" className="text-2xl">
           Outtel
         </a>
       </div>
 
       {/* middle part of nav bar ,,, navlinks here */}
-      <div class="navbar-center hidden lg:flex">
-        <ul class="menu menu-horizontal p-0">
+      <div className="navbar-center hidden lg:flex">
+        <ul className="menu menu-horizontal p-0">
           <NavLinks />
         </ul>
       </div>
 
       {/* last part of navbar here,,  */}
-      <div class="navbar-end my-0 py-0">
+      <div className="navbar-end my-0 py-0">
         {/* Avatar  */}
         {user ? (
-          <div class="dropdown dropdown-hover dropdown-end">
-            <label tabindex="0" class="">
+          <div className="dropdown dropdown-hover dropdown-end">
+            <label tabIndex="0" className="">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6 lg:hidden"
+                className="h-6 w-6 lg:hidden"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M4 6h16M4 12h8m-8 6h16"
                 />
               </svg>
 
               {/*  avatar : placeholder */}
               {user?.photoURL ? (
-                <div class="avatar hidden lg:block">
-                  <div class="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                <div className="avatar hidden lg:block">
+                  <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                     <img src={user?.photoURL} alt="" />
                   </div>
                 </div>
               ) : (
-                <div class="avatar placeholder">
-                  <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
-                    <span class="text-3xl uppercase">
+                <div className="avatar placeholder">
+                  <div className="bg-neutral-focus text-neutral-content rounded-full w-12">
+                    <span className="text-3xl uppercase">
                       {user.email.slice(0, 1)}
                     </span>
                   </div>
@@ -82,8 +82,8 @@ const Navbar = () => {
               )}
             </label>
             <ul
-              tabindex="0"
-              class="dropdown-content  shadow-xl bg-base-100 text-primary rounded-xl  w-64"
+              tabIndex="0"
+              className="dropdown-content  shadow-xl bg-base-100 text-primary rounded-xl  w-64"
             >
               {/* profile */}
               <DropdownLinks user={user} />
@@ -163,24 +163,24 @@ const Navbar = ({ children }) => {
       </li>
 
       {user ? (
-        <div class="dropdown lg:dropdown-end dropdown-hover">
-          <label tabindex="0">
-            <div class="avatar online mt-2">
-              <div class="w-8 rounded-full">
+        <div className="dropdown lg:dropdown-end dropdown-hover">
+          <label tabIndex="0">
+            <div className="avatar online mt-2">
+              <div className="w-8 rounded-full">
                 <img src={user?.photoURL || userImage || userImg} alt="" />
               </div>
             </div>
           </label>
           <ul
-            tabindex="0"
-            class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+            tabIndex="0"
+            className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <div class="avatar">
-              <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 mx-auto">
+            <div className="avatar">
+              <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 mx-auto">
                 <img src={user?.photoURL || userImage || userImg} alt="" />
               </div>
             </div>
-            <div class="divider"></div>
+            <div className="divider"></div>
             <p className="text-center text-primary font-semibold">
               {user?.displayName}
             </p>
@@ -195,19 +195,19 @@ const Navbar = ({ children }) => {
                 signOut(auth);
                 localStorage.removeItem("accessToken");
               }}
-              class="btn gap-2 "
+              className="btn gap-2 "
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6"
+                className="h-6 w-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M6 18L18 6M6 6l12 12"
                 />
               </svg>
@@ -226,28 +226,28 @@ const Navbar = ({ children }) => {
   );
 
   return (
-    <div class="navbar bg-base-100">
-      <div class="navbar-start">
-        <div class="dropdown">
-          <label tabindex="0" class="btn btn-ghost lg:hidden">
+    <div className="navbar bg-base-100">
+      <div className="navbar-start">
+        <div className="dropdown">
+          <label tabIndex="0" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5"
+              className="h-5 w-5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M4 6h16M4 12h8m-8 6h16"
               />
             </svg>
           </label>
           <ul
-            tabindex="0"
-            class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            tabIndex="0"
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
               <NavLink className="rounded-lg" to="/">
@@ -271,10 +271,10 @@ const Navbar = ({ children }) => {
             </li>
           </ul>
         </div>
-        <a class="btn btn-ghost normal-case text-xl">Outtel</a>
+        <a className="btn btn-ghost normal-case text-xl">Outtel</a>
       </div>
-      <div class="navbar-center hidden lg:flex">
-        <ul class="menu menu-horizontal p-0">
+      <div className="navbar-center hidden lg:flex">
+        <ul className="menu menu-horizontal p-0">
           <li>
             <NavLink className="rounded-lg" to="/">
               Home

@@ -45,7 +45,6 @@ const Purchase = () => {
 
   // handle order
   const onSubmit = (data) => {
-    console.log(data);
     const newOrder = {
       ...data,
       part: name,
@@ -54,7 +53,7 @@ const Purchase = () => {
       name: user?.displayName,
       email: user.email,
     };
-    console.log(newOrder);
+
     (async function () {
       const { data } = await axios.post(
         "https://historic-cuyahoga-valley-56137.herokuapp.com/orders",
@@ -90,19 +89,19 @@ const Purchase = () => {
       <Navbar />
       <div className="min-h-screen bg-base-100">
         <div
-          class="hero min-h-[200px]"
+          className="hero min-h-[200px]"
           style={{ backgroundImage: `url(${image})` }}
         >
-          <div class="hero-overlay bg-primary bg-opacity-60"></div>
+          <div className="hero-overlay bg-primary bg-opacity-60"></div>
         </div>
 
-        <div class="grid lg:grid-cols-2 justify-items-center my-10 w-[80%] mx-auto pb-6">
+        <div className="grid lg:grid-cols-2 justify-items-center my-10 w-[80%] mx-auto pb-6">
           <div className="flex justify-center items-center">
-            <img src={image} class="w-full rounded-lg " alt="" />
+            <img src={image} className="w-full rounded-lg " alt="" />
           </div>
 
           <div>
-            <h1 class="text-5xl font-bold">{name}</h1>
+            <h1 className="text-5xl font-bold">{name}</h1>
             <p className="flex gap-6">
               <span>
                 <FontAwesomeIcon icon={faWarehouse} /> Available : {quantity}
@@ -113,38 +112,38 @@ const Purchase = () => {
               </span>
               <span>Price : ${price}</span>
             </p>
-            <p class="mt-6">{description}</p>
+            <p className="mt-6">{description}</p>
 
-            <form onSubmit={handleSubmit(onSubmit)} class="">
+            <form onSubmit={handleSubmit(onSubmit)} className="">
               {/* name field */}
-              <div class="form-control">
-                <label class="label">
-                  <span class="label-text">Your Name</span>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Your Name</span>
                 </label>
                 <input
                   type="text"
                   value={user?.displayName}
                   readOnly
-                  class="input input-bordered "
+                  className="input input-bordered "
                 />
               </div>
               {/* email field */}
-              <div class="form-control">
-                <label class="label">
-                  <span class="label-text">Your email</span>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Your email</span>
                 </label>
                 <input
                   type="text"
                   value={user?.email}
                   readOnly
-                  class="input input-bordered "
+                  className="input input-bordered "
                 />
               </div>
 
               {/* address field */}
-              <div class="form-control">
-                <label class="label">
-                  <span class="label-text">Address</span>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Address</span>
                 </label>
                 <input
                   {...register("address", {
@@ -155,20 +154,20 @@ const Purchase = () => {
                   })}
                   type="text"
                   placeholder="Enter your current address"
-                  class="input input-bordered "
+                  className="input input-bordered "
                 />
-                <label class="label">
+                <label className="label">
                   {errors.address?.type === "required" && (
-                    <span class="label-text-alt text-error">
+                    <span className="label-text-alt text-error">
                       {errors.address.message}
                     </span>
                   )}
                 </label>
               </div>
               {/*  field */}
-              <div class="form-control">
-                <label class="label">
-                  <span class="label-text">Phone</span>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Phone</span>
                 </label>
                 <input
                   {...register("phone", {
@@ -179,18 +178,18 @@ const Purchase = () => {
                   })}
                   type="text"
                   placeholder="Enter phone number"
-                  class="input input-bordered "
+                  className="input input-bordered "
                 />
-                <label class="label">
+                <label className="label">
                   {errors.phone?.type === "required" && (
-                    <span class="label-text-alt text-error">
+                    <span className="label-text-alt text-error">
                       {errors.phone.message}
                     </span>
                   )}
                 </label>
               </div>
-              <div class="form-control">
-                <label class="input-group">
+              <div className="form-control">
+                <label className="input-group">
                   <span>Quantity</span>
                   <input
                     {...register("quantity", {
@@ -211,30 +210,33 @@ const Purchase = () => {
                     min="0"
                     placeholder={`${min_quantity}-${quantity}`}
                     // max="160"
-                    class="input input-bordered"
+                    className="input input-bordered"
                   />
                 </label>
-                <label class="label">
+                <label className="label">
                   {errors.quantity?.type === "required" && (
-                    <span class="label-text-alt text-error">
+                    <span className="label-text-alt text-error">
                       {errors.quantity.message}
                     </span>
                   )}
                   {errors.quantity?.type === "max" && (
-                    <span class="label-text-alt text-error">
+                    <span className="label-text-alt text-error">
                       {errors.quantity.message}
                     </span>
                   )}
                   {errors.quantity?.type === "min" && (
-                    <span class="label-text-alt text-error">
+                    <span className="label-text-alt text-error">
                       {errors.quantity.message}
                     </span>
                   )}
                 </label>
               </div>
 
-              <div class="form-control mt-6">
-                <button disabled={disabled && "true"} class="btn btn-primary">
+              <div className="form-control mt-6">
+                <button
+                  disabled={disabled && "true"}
+                  className="btn btn-primary"
+                >
                   Place Order
                 </button>
               </div>

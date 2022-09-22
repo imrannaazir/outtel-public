@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 
 const Blog = ({ blog: { title, blog, id, img, author } }) => {
   return (
-    <div class="card card-side bg-base-100 shadow-xl mb-10">
-      <div class="card-body">
+    <div className="card card-side bg-base-100 shadow-xl mb-10">
+      <div className="card-body">
         {/* blog */}
         <div className="lg:flex gap-6">
           {/* image and author */}
@@ -32,7 +32,7 @@ const Blog = ({ blog: { title, blog, id, img, author } }) => {
               {blog}
               <Link
                 to="https://www.programming-hero.com/blog/"
-                class="link link-primary"
+                className="link link-primary"
               >
                 ..see more
               </Link>

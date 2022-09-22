@@ -62,11 +62,11 @@ const AddParts = () => {
   if (loading) return <Loading />;
   return (
     <div className="w-full min-h-screen bg-base-100">
-      <form onSubmit={handleSubmit(onSubmit)} class="card-body to-base-100">
+      <form onSubmit={handleSubmit(onSubmit)} className="card-body to-base-100">
         {/* product name */}
-        <div class="form-control lg:w-[50%]">
-          <label class="label">
-            <span class="label-text">Product Name</span>
+        <div className="form-control lg:w-[50%]">
+          <label className="label">
+            <span className="label-text">Product Name</span>
           </label>
           <input
             {...register("name", {
@@ -77,20 +77,20 @@ const AddParts = () => {
             })}
             type="text"
             placeholder="Enter product name"
-            class="input input-bordered w-full "
+            className="input input-bordered w-full "
           />
-          <label class="label">
+          <label className="label">
             {errors.name?.type === "required" && (
-              <span class="label-text-alt text-error">
+              <span className="label-text-alt text-error">
                 {errors.name.message}
               </span>
             )}
           </label>
         </div>
         {/* product description */}
-        <div class="form-control lg:w-[50%]">
-          <label class="label">
-            <span class="label-text">Product Description</span>
+        <div className="form-control lg:w-[50%]">
+          <label className="label">
+            <span className="label-text">Product Description</span>
           </label>
           <textarea
             {...register("description", {
@@ -101,20 +101,20 @@ const AddParts = () => {
             })}
             type="text"
             placeholder="Enter product description"
-            class="input input-bordered w-full h-48 pt-2 "
+            className="input input-bordered w-full h-48 pt-2 "
           />
-          <label class="label">
+          <label className="label">
             {errors.description?.type === "required" && (
-              <span class="label-text-alt text-error">
+              <span className="label-text-alt text-error">
                 {errors.description.message}
               </span>
             )}
           </label>
         </div>
         {/* product description */}
-        <div class="form-control lg:w-[50%]">
-          <label class="label">
-            <span class="label-text">Category</span>
+        <div className="form-control lg:w-[50%]">
+          <label className="label">
+            <span className="label-text">Category</span>
           </label>
           <input
             {...register("category", {
@@ -125,20 +125,20 @@ const AddParts = () => {
             })}
             type="text"
             placeholder="Enter product description"
-            class="input input-bordered w-full  "
+            className="input input-bordered w-full  "
           />
-          <label class="label">
+          <label className="label">
             {errors.category?.type === "required" && (
-              <span class="label-text-alt text-error">
+              <span className="label-text-alt text-error">
                 {errors.category.message}
               </span>
             )}
           </label>
         </div>
 
-        <div class="form-control lg:w-[50%] ">
-          <label class="label">
-            <span class="label-text">Minimum Quantity</span>
+        <div className="form-control lg:w-[50%] ">
+          <label className="label">
+            <span className="label-text">Minimum Quantity</span>
           </label>
           <input
             {...register("min_quantity", {
@@ -150,19 +150,19 @@ const AddParts = () => {
             min="1"
             type="number"
             placeholder="Min quantity"
-            class="input input-bordered w-full "
+            className="input input-bordered w-full "
           />
-          <label class="label">
+          <label className="label">
             {errors.min_quantity?.type === "required" && (
-              <span class="label-text-alt text-error">
+              <span className="label-text-alt text-error">
                 {errors.min_quantity.message}
               </span>
             )}
           </label>
         </div>
-        <div class="form-control lg:w-[50%] ">
-          <label class="label">
-            <span class="label-text">Available Quantity</span>
+        <div className="form-control lg:w-[50%] ">
+          <label className="label">
+            <span className="label-text">Available Quantity</span>
           </label>
           <input
             {...register("quantity", {
@@ -174,20 +174,20 @@ const AddParts = () => {
             min="1"
             type="number"
             placeholder="Quantity"
-            class="input input-bordered w-full "
+            className="input input-bordered w-full "
           />
-          <label class="label">
+          <label className="label">
             {errors.quantity?.type === "required" && (
-              <span class="label-text-alt text-error">
+              <span className="label-text-alt text-error">
                 {errors.quantity.message}
               </span>
             )}
           </label>
         </div>
 
-        <div class="form-control lg:w-[50%] ">
-          <label class="label">
-            <span class="label-text">Price</span>
+        <div className="form-control lg:w-[50%] ">
+          <label className="label">
+            <span className="label-text">Price</span>
           </label>
           <input
             {...register("price", {
@@ -199,26 +199,26 @@ const AddParts = () => {
             min="1"
             type="number"
             placeholder="price"
-            class="input input-bordered w-full "
+            className="input input-bordered w-full "
           />
-          <label class="label">
+          <label className="label">
             {errors.price?.type === "required" && (
-              <span class="label-text-alt text-error">
+              <span className="label-text-alt text-error">
                 {errors.price.message}
               </span>
             )}
           </label>
         </div>
 
-        <div class="form-control lg:w-[50%] w-[65%]">
-          <label class="label">
-            <span class="label-text">Part Image</span>
+        <div className="form-control lg:w-[50%] w-[65%]">
+          <label className="label">
+            <span className="label-text">Part Image</span>
           </label>
-          <input type="file" class="" onChange={handleImageUpload} />
+          <input type="file" className="" onChange={handleImageUpload} />
         </div>
 
-        <div class="form-control lg:w-[50%] mt-6 ">
-          <button type="submit" class="btn btn-primary">
+        <div className="form-control lg:w-[50%] mt-6 ">
+          <button type="submit" className="btn btn-primary">
             Add New
           </button>
         </div>

@@ -11,7 +11,6 @@ const UpdateProfile = () => {
   const [user] = useAuthState(auth);
   // user in db
   const [userDb, setUserDb] = useState({});
-  console.log(userDb);
 
   /// get api for user
   useEffect(() => {
@@ -23,7 +22,6 @@ const UpdateProfile = () => {
     })();
   }, [user?.email]);
 
-  console.log(user.photoURL);
   const [imageURL, setImageURL] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -41,9 +39,8 @@ const UpdateProfile = () => {
       .post("https://api.imgbb.com/1/upload", formData)
       .then(function (response) {
         const imageLink = response.data.data.display_url;
-        console.log(imageLink);
+
         setImageURL(imageLink);
-        console.log(response);
       })
       .catch(function (error) {
         console.log(error);
@@ -64,14 +61,13 @@ const UpdateProfile = () => {
   if (loading) return <Loading />;
 
   const onSubmit = (data) => {
-    console.log(data);
     const updatedUser = {
       ...data,
       name: user?.displayName,
       email: user?.email,
       photoURL: user?.photoURL || imageURL || userDb?.image,
     };
-    console.log(updatedUser);
+
     (async function () {
       const { data } = await axios.put(
         `https://historic-cuyahoga-valley-56137.herokuapp.com/update-users/${user?.email},`,
@@ -86,56 +82,56 @@ const UpdateProfile = () => {
     // <!-- component -->
     // <!-- This is an example component -->
 
-    <div class="bg-base-100 w-[80%] mx-auto my-12 p-8">
+    <div className="bg-base-100 w-[80%] mx-auto my-12 p-8">
       <p className=" text-2xl">Update Your Profile</p>
-      <div class="w-full flex">
-        <div class="p-8 mx-2 flex flex-col gap-4">
+      <div className="w-full flex">
+        <div className="p-8 mx-2 flex flex-col gap-4">
           <p>Profile Photo</p>
           <img
             id="showImage"
-            class="max-w-xs w-32 items-center border"
+            className="max-w-xs w-32 items-center border"
             src={user?.photoURL || userDb?.photoURL || userIMG}
             alt=""
           />
           {/* product img */}
-          <div class="form-control w-[65%]">
-            <label class="label">
-              <span class="label-text">Part Image</span>
+          <div className="form-control w-[65%]">
+            <label className="label">
+              <span className="label-text">Part Image</span>
             </label>
-            <input type="file" class="" onChange={handleImageUpload} />
+            <input type="file" className="" onChange={handleImageUpload} />
           </div>
         </div>
       </div>
 
       {/* account information */}
-      <form onSubmit={handleSubmit(onSubmit)} class="flex flex-col gap-4">
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
         {/* name field */}
         <div className="form-control">
-          <label class="input-group">
+          <label className="input-group">
             <span className=" w-[110px] bg-white">Your Name :</span>
             <input
               type="text"
               value={user?.displayName}
               disabled
-              class="input input-bordered"
+              className="input input-bordered"
             />
           </label>
         </div>
         {/* email field */}
         <div className="form-control">
-          <label class="input-group">
+          <label className="input-group">
             <span className=" w-[110px] bg-white">Your Email :</span>
             <input
               type="text"
               value={user?.email}
               disabled
-              class="input input-bordered"
+              className="input input-bordered"
             />
           </label>
         </div>
         {/* phone num field */}
         <div className="form-control">
-          <label class="input-group">
+          <label className="input-group">
             <span className=" w-[110px] bg-white">Phone :</span>
             <input
               {...register("phone", {
@@ -146,12 +142,12 @@ const UpdateProfile = () => {
               })}
               type="text"
               placeholder={userDb?.phone || "update your phone number"}
-              class="input input-bordered"
+              className="input input-bordered"
             />
           </label>
-          <label class="label">
+          <label className="label">
             {errors.phone?.type === "required" && (
-              <span class="label-text-alt text-error">
+              <span className="label-text-alt text-error">
                 {errors.phone.message}
               </span>
             )}
@@ -160,7 +156,7 @@ const UpdateProfile = () => {
 
         {/* location field */}
         <div className="form-control">
-          <label class="input-group">
+          <label className="input-group">
             <span className=" w-[110px] bg-white">Location :</span>
             <input
               {...register("location", {
@@ -171,12 +167,12 @@ const UpdateProfile = () => {
               })}
               type="text"
               placeholder={userDb?.location || "update your location"}
-              class="input input-bordered"
+              className="input input-bordered"
             />
           </label>
-          <label class="label">
+          <label className="label">
             {errors.location?.type === "required" && (
-              <span class="label-text-alt text-error">
+              <span className="label-text-alt text-error">
                 {errors.location.message}
               </span>
             )}
@@ -185,7 +181,7 @@ const UpdateProfile = () => {
 
         {/* education field */}
         <div className="form-control">
-          <label class="input-group">
+          <label className="input-group">
             <span className=" w-[110px] bg-white">Education :</span>
             <input
               {...register("education", {
@@ -196,12 +192,12 @@ const UpdateProfile = () => {
               })}
               type="text"
               placeholder={userDb?.education || "where was you reading"}
-              class="input input-bordered"
+              className="input input-bordered"
             />
           </label>
-          <label class="label">
+          <label className="label">
             {errors.education?.type === "required" && (
-              <span class="label-text-alt text-error">
+              <span className="label-text-alt text-error">
                 {errors.education.message}
               </span>
             )}
@@ -209,7 +205,7 @@ const UpdateProfile = () => {
         </div>
         {/* linkedin field */}
         <div className="form-control">
-          <label class="input-group">
+          <label className="input-group">
             <span className=" w-[110px] bg-white">LinkedIn :</span>
             <input
               {...register("linkedin", {
@@ -220,12 +216,12 @@ const UpdateProfile = () => {
               })}
               type="text"
               placeholder={userDb?.linkedin || "linkedin.com/in/username"}
-              class="input input-bordered"
+              className="input input-bordered"
             />
           </label>
-          <label class="label">
+          <label className="label">
             {errors.linkedin?.type === "required" && (
-              <span class="label-text-alt text-error">
+              <span className="label-text-alt text-error">
                 {errors.linkedin.message}
               </span>
             )}
@@ -233,7 +229,7 @@ const UpdateProfile = () => {
         </div>
         {/* btn */}
         <div className="form-control">
-          <label class="input-group">
+          <label className="input-group">
             <span className=" w-[110px] bg-white"></span>
             <button type="submit" className="btn btn-primary rounded-none">
               Update Info

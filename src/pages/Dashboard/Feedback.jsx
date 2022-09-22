@@ -55,30 +55,30 @@ const Feedback = () => {
   if (loading) return <Loading />;
 
   return (
-    <div class="flex justify-center items-center bg-base-200">
-      <div class="hero-content flex-col lg:flex-row-reverse">
-        <img src={feedbackIMG} class="hidden lg:block" alt="login" />
+    <div className="flex justify-center items-center bg-base-200">
+      <div className="hero-content flex-col lg:flex-row-reverse">
+        <img src={feedbackIMG} className="hidden lg:block" alt="login" />
 
-        <div class="card flex-shrink-0 w-full lg:max-w-sm shadow-2xl bg-base-100">
+        <div className="card flex-shrink-0 w-full lg:max-w-sm shadow-2xl bg-base-100">
           {/* form */}
-          <form onSubmit={handleSubmit(onSubmit)} class="card-body">
+          <form onSubmit={handleSubmit(onSubmit)} className="card-body">
             {/* Product name field */}
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Your Name</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Your Name</span>
               </label>
               <input
                 type="text"
                 value={user?.displayName}
                 disabled
-                class="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full max-w-xs"
               />
             </div>
 
             {/* feedback des field */}
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Feedback</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Feedback</span>
               </label>
               <textarea
                 {...register("feedback", {
@@ -97,21 +97,21 @@ const Feedback = () => {
                 })}
                 type="text"
                 placeholder="Write a feedback"
-                class="input input-bordered w-full h-24 max-w-xs"
+                className="input input-bordered w-full h-24 max-w-xs"
               />
-              <label class="label">
+              <label className="label">
                 {errors.feedback?.type === "required" && (
-                  <span class="label-text-alt text-error">
+                  <span className="label-text-alt text-error">
                     {errors.feedback.message}
                   </span>
                 )}
                 {errors.feedback?.type === "minLength" && (
-                  <span class="label-text-alt text-error">
+                  <span className="label-text-alt text-error">
                     {errors.feedback.message}
                   </span>
                 )}
                 {errors.feedback?.type === "maxLength" && (
-                  <span class="label-text-alt text-error">
+                  <span className="label-text-alt text-error">
                     {errors.feedback.message}
                   </span>
                 )}
@@ -120,42 +120,42 @@ const Feedback = () => {
 
             <div className="flex gap-8 items-center">
               <p className="text-lg">Ratting:</p>
-              <div class="rating w-full">
+              <div className="rating w-full">
                 <input
                   type="radio"
                   name="rating-1"
-                  class="mask mask-star bg-orange-400"
+                  className="mask mask-star bg-orange-400"
                   onClick={() => setRatting(1)}
                 />
                 <input
                   type="radio"
                   name="rating-1"
-                  class="mask mask-star bg-orange-400"
+                  className="mask mask-star bg-orange-400"
                   onClick={() => setRatting(2)}
                 />
                 <input
                   type="radio"
                   name="rating-1"
-                  class="mask mask-star bg-orange-400"
+                  className="mask mask-star bg-orange-400"
                   onClick={() => setRatting(3)}
                 />
                 <input
                   type="radio"
                   name="rating-1"
-                  class="mask mask-star bg-orange-400"
+                  className="mask mask-star bg-orange-400"
                   onClick={() => setRatting(4)}
                 />
                 <input
                   type="radio"
                   name="rating-1"
-                  class="mask mask-star bg-orange-400"
+                  className="mask mask-star bg-orange-400"
                   onClick={() => setRatting(5)}
                 />
               </div>
             </div>
 
-            <div class="form-control mt-6">
-              <button class="btn btn-primary">Give Feedback</button>
+            <div className="form-control mt-6">
+              <button className="btn btn-primary">Give Feedback</button>
             </div>
           </form>
         </div>

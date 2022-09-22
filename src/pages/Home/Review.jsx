@@ -5,7 +5,7 @@ import quote from "../../assets/icons/quote.svg";
 import userIMG from "../../assets/images/user.jpg";
 const Review = (review) => {
   return (
-    <div class="card lg:w-[450px] bg-base-100 shadow-xl">
+    <div className="card lg:w-[450px] bg-base-100 shadow-xl">
       <div className="w-16 mt-4 ml-4">
         <img src={quote} alt="" />
       </div>
@@ -15,8 +15,8 @@ const Review = (review) => {
       </p>
 
       <div className="mx-12 flex items-center my-8">
-        <div class="avatar">
-          <div class="w-16 h-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+        <div className="avatar">
+          <div className="w-16 h-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
             <img src={review?.review?.image || userIMG} alt="" />
           </div>
           <div className="ml-4 pt-2">

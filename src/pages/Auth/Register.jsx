@@ -59,9 +59,9 @@ const Register = () => {
           <p className="text-center text-lg text-primary font-bold">Register</p>
 
           {/* email field */}
-          <div class="form-control">
-            <label class="label">
-              <span class="label-text w-full max-w-xs">Full Name</span>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text w-full max-w-xs">Full Name</span>
             </label>
             <input
               {...register("name", {
@@ -72,20 +72,20 @@ const Register = () => {
               })}
               type="text"
               placeholder="Create username"
-              class="input input-bordered w-full max-w-xs lg:w-[350px]"
+              className="input input-bordered w-full max-w-xs lg:w-[350px]"
             />
-            <label class="label">
+            <label className="label">
               {errors.name?.type === "required" && (
-                <span class="label-text-alt text-error">
+                <span className="label-text-alt text-error">
                   {errors.name.message}
                 </span>
               )}
             </label>
           </div>
           {/* email field */}
-          <div class="form-control">
-            <label class="label">
-              <span class="label-text">Email</span>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Email</span>
             </label>
             <input
               {...register("email", {
@@ -100,16 +100,16 @@ const Register = () => {
               })}
               type="text"
               placeholder="Enter email"
-              class="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-full max-w-xs"
             />
-            <label class="label">
+            <label className="label">
               {errors.email?.type === "required" && (
-                <span class="label-text-alt text-error">
+                <span className="label-text-alt text-error">
                   {errors.email.message}
                 </span>
               )}
               {errors.email?.type === "pattern" && (
-                <span class="label-text-alt text-error">
+                <span className="label-text-alt text-error">
                   {errors.email.message}
                 </span>
               )}
@@ -117,9 +117,9 @@ const Register = () => {
           </div>
 
           {/* password field */}
-          <div class="form-control">
-            <label class="label">
-              <span class="label-text w-full max-w-xs">Password</span>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text w-full max-w-xs">Password</span>
             </label>
             <input
               {...register("password", {
@@ -134,16 +134,16 @@ const Register = () => {
               })}
               type="password"
               placeholder="Create password"
-              class="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-full max-w-xs"
             />
-            <label class="label">
+            <label className="label">
               {errors.password?.type === "required" && (
-                <span class="label-text-alt text-error">
+                <span className="label-text-alt text-error">
                   {errors.password.message}
                 </span>
               )}
               {errors.password?.type === "minLength" && (
-                <span class="label-text-alt text-error">
+                <span className="label-text-alt text-error">
                   {errors.password.message}
                 </span>
               )}
@@ -151,9 +151,11 @@ const Register = () => {
           </div>
 
           {/*confirm password field */}
-          <div class="form-control">
-            <label class="label">
-              <span class="label-text w-full max-w-xs">Confirm Password</span>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text w-full max-w-xs">
+                Confirm Password
+              </span>
             </label>
             <input
               {...register("confirm_password", {
@@ -166,24 +168,26 @@ const Register = () => {
               })}
               type="password"
               placeholder="Confirm password"
-              class="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-full max-w-xs"
             />
-            <label class="label">
+            <label className="label">
               {errors.confirm_password?.type === "required" && (
-                <span class="label-text-alt text-error">
+                <span className="label-text-alt text-error">
                   {errors.confirm_password.message}
                 </span>
               )}
               {errors.confirm_password?.type === "validate" && (
-                <span class="label-text-alt text-error">
+                <span className="label-text-alt text-error">
                   {errors.confirm_password.message}
                 </span>
               )}
             </label>
           </div>
 
-          <div class="form-control mt-6">
-            <button class="btn btn-primary w-full max-w-xs">Register</button>
+          <div className="form-control mt-6">
+            <button className="btn btn-primary w-full max-w-xs">
+              Register
+            </button>
             <span className="text-center text-sm my-3 w-full max-w-xs">
               Have an account?
               <Link className="text-primary" to="/login">
@@ -195,7 +199,7 @@ const Register = () => {
         <div className="divider">OR</div>
         <button
           onClick={() => signInWithGoogle()}
-          class="btn btn-outline btn-primary btn-block"
+          className="btn btn-outline btn-primary btn-block"
         >
           Continue with Google
         </button>

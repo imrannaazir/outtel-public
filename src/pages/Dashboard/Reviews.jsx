@@ -12,15 +12,15 @@ const Reviews = () => {
       const { data } = await axios.get(
         `https://historic-cuyahoga-valley-56137.herokuapp.com/reviews/${user?.email}`
       );
-      console.log(data);
+
       setReviews(data);
     })();
   }, [user?.email]);
   return (
     <div className="w-[95%] px-4 mx-auto mt-8 bg-base-100">
       <p className="text-lg py-4"> Your Reviews</p>
-      <div class="overflow-x-auto">
-        <table class="table w-full">
+      <div className="overflow-x-auto">
+        <table className="table w-full">
           {/* <!-- head --> */}
           <thead>
             <tr>

@@ -8,7 +8,7 @@ const Part = ({ part: { image, name, description, price, _id } }) => {
   return (
     <div
       data-aos="zoom-in"
-      class="group card w-96 bg-base-100 shadow-primary hover:shadow-primary shadow-md hover:shadow-lg "
+      className="group card w-96 bg-base-100 shadow-primary hover:shadow-primary shadow-md hover:shadow-lg "
     >
       <figure>
         <img
@@ -17,9 +17,9 @@ const Part = ({ part: { image, name, description, price, _id } }) => {
           alt="Shoes"
         />
       </figure>
-      <div class="card-body">
-        <div class="badge badge-secondary">NEW</div>
-        <h2 class="card-title">{name}</h2>
+      <div className="card-body">
+        <div className="badge badge-secondary">NEW</div>
+        <h2 className="card-title">{name}</h2>
         <p>{description.slice(0, 90)}..</p>
         <div className="flex gap-2 text-xl">
           <span className="text-success">${price}</span>
@@ -27,10 +27,10 @@ const Part = ({ part: { image, name, description, price, _id } }) => {
             ${parseInt(price) + 103}
           </span>
         </div>
-        <div class="card-actions justify-end">
+        <div className="card-actions justify-end">
           <button
             onClick={() => navigate(`/purchase/${_id}`)}
-            class="btn btn-primary btn-outline btn-sm flex justify-center items-center gap-1"
+            className="btn btn-primary btn-outline btn-sm flex justify-center items-center gap-1"
           >
             buy now <FontAwesomeIcon icon={faArrowRight} />
           </button>

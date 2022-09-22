@@ -17,15 +17,15 @@ const DropdownLinks = ({ user }) => {
                 <div className='flex flex-col justify-center items-center gap-4'>
                     {/* avatar : placeholder */}
                     {user?.photoURL ?
-                        <div class="avatar">
-                            <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                        <div className="avatar">
+                            <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                                 <img src={user?.photoURL} alt='' />
                             </div>
                         </div>
                         :
-                        <div class="avatar placeholder">
-                            <div class="bg-neutral-focus text-neutral-content rounded-full w-24">
-                                <span class="text-3xl uppercase">{user?.email?.slice(0, 1)}</span>
+                        <div className="avatar placeholder">
+                            <div className="bg-neutral-focus text-neutral-content rounded-full w-24">
+                                <span className="text-3xl uppercase">{user?.email?.slice(0, 1)}</span>
                             </div>
                         </div>}
 

@@ -4,7 +4,6 @@ import userIMG from "../../assets/images/user.jpg";
 
 const User = ({ i, refetch, user: { name, email, photoURL, role, _id } }) => {
   const handleRole = (email) => {
-    console.log(email);
     fetch(
       `https://historic-cuyahoga-valley-56137.herokuapp.com/users/admin/${email}`,
       {
@@ -22,7 +21,6 @@ const User = ({ i, refetch, user: { name, email, photoURL, role, _id } }) => {
       })
       .then((data) => {
         if (data.modifiedCount > 0) {
-          console.log(data);
           toast.success(`Successfully made an admin`);
           refetch();
         }

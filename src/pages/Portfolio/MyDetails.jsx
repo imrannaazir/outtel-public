@@ -3,12 +3,12 @@ import me from "../../assets/images/me.png";
 
 const MyDetails = () => {
   return (
-    <div class="hero min-h-screen bg-base-200">
-      <div class="hero-content flex-col lg:flex-row-reverse">
+    <div className="hero min-h-screen bg-base-200">
+      <div className="hero-content flex-col lg:flex-row-reverse">
         <img src={me} className="w-[50%]" alt="" />
         <div className="w-full">
-          <h1 class="text-5xl font-bold w-full">Who Am I!</h1>
-          <p class="pt-6 text-3xl font-semibold text-primary">
+          <h1 className="text-5xl font-bold w-full">Who Am I!</h1>
+          <p className="pt-6 text-3xl font-semibold text-primary">
             Imran Nazir Emon
           </p>
           <p className="mb-5 text-xl">Frontend Developer, React JS.</p>
@@ -32,7 +32,7 @@ const MyDetails = () => {
             </span>{" "}
           </p>
 
-          <button class="btn btn-primary">Contact me</button>
+          <button className="btn btn-primary">Contact me</button>
         </div>
       </div>
     </div>

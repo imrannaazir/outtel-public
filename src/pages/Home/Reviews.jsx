@@ -75,9 +75,9 @@ const Reviews = () => {
         }}
         className="mySwiper "
       >
-        {reviews.map((review, i) => (
+        {reviews.map((review) => (
           <SwiperSlide>
-            <Review key={i} review={review} />
+            <Review key={review?._id} review={review} />
           </SwiperSlide>
         ))}
       </Swiper>

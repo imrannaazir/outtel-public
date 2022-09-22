@@ -29,7 +29,7 @@ const Analysis = () => {
       quantity: 630,
     },
     {
-      id: 1,
+      id: 4,
       name: "FeedBacks",
       logo: faMessage,
       quantity: 550,
@@ -41,7 +41,7 @@ const Analysis = () => {
         <>
           <div
             className=" flex flex-col items-center gap-4  m-2 py-6  hover:shadow-xl uppercase bg-white rounded-lg"
-            key={info.id}
+            key={info?.id}
           >
             <FontAwesomeIcon
               className="text-5xl text-gray-600"
