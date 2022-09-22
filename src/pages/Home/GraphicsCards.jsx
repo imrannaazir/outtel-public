@@ -14,7 +14,8 @@ const GraphicsCards = () => {
       )
       .then((res) => res.data)
   );
-  const graphicsCards = data?.slice(0, 6);
+  const graphicsCards = data?.slice(0, 3);
+  console.log(graphicsCards);
   //is loading
   if (isLoading) return <Loading />;
   //is any error

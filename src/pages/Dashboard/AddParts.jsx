@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import Loading from "../../Shared/Loading";
 const AddParts = () => {
   const [imageURL, setImageURL] = useState("");
+  console.log(imageURL);
   const [loading, setLoading] = useState(false);
 
   //handle img

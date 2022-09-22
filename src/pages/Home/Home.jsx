@@ -14,7 +14,7 @@ import Processors from "./Processors";
 
 const Home = () => {
   return (
-    <div className="">
+    <div id="home" className="">
       <Navbar />
       <Banner />
       <Categories />

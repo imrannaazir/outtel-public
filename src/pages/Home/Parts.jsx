@@ -19,7 +19,7 @@ const Parts = () => {
   //is any error
   if (error) return toast.error(error.message);
   return (
-    <div className="mt-16">
+    <div id="new_arrivals" className="mt-16">
       <Heading>new arrivals</Heading>
       <div id="parts" className="flex justify-center gap-6 flex-wrap">
         {parts.map((part, i) => (

@@ -4,6 +4,7 @@ import bannerIMG from "../../assets/images/banner.webp";
 const Newsletter = () => {
   return (
     <div
+      id="join"
       style={{ backgroundImage: `url(${bannerIMG})` }}
       class="hero bg-cover h-screen gap-10 bg-fixed"
     >

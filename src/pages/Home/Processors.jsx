@@ -12,7 +12,7 @@ const Processors = () => {
       .get("https://historic-cuyahoga-valley-56137.herokuapp.com/processors")
       .then((res) => res.data)
   );
-  const processors = data?.slice(0, 6);
+  const processors = data?.slice(0, 3);
   //is loading
   if (isLoading) return <Loading />;
   //is any error
