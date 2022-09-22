@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Category from "./Category";
 import Heading from "./Heading";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Categories = () => {
   const categories = [
@@ -20,8 +22,15 @@ const Categories = () => {
       id: "graphics_cards",
     },
   ];
+
+  //aos
+  useEffect(() => {
+    AOS.init({
+      duration: 3000,
+    });
+  }, []);
   return (
-    <div className="mt-16">
+    <div data-aos="zoom-in" className="mt-16">
       <Heading>Categories</Heading>
       <div className="flex justify-center flex-wrap gap-6">
         {categories.map((category, i) => (

@@ -6,7 +6,10 @@ import { useNavigate } from "react-router-dom";
 const Part = ({ part: { image, name, description, price, _id } }) => {
   const navigate = useNavigate();
   return (
-    <div class="group card w-96 bg-base-100 shadow-primary hover:shadow-primary shadow-md hover:shadow-lg ">
+    <div
+      data-aos="zoom-in"
+      class="group card w-96 bg-base-100 shadow-primary hover:shadow-primary shadow-md hover:shadow-lg "
+    >
       <figure>
         <img
           src={image}
