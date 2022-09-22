@@ -42,7 +42,7 @@ const Reviews = () => {
   console.log(reviews);
   if (reviews.length === 0) return <Loading />; */
   return (
-    <div className="">
+    <div className="mt-16">
       <Heading>What Our Client Say</Heading>
       <Swiper
         effect={"coverflow"}

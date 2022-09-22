@@ -21,7 +21,7 @@ const Categories = () => {
     },
   ];
   return (
-    <div className="">
+    <div className="mt-16">
       <Heading>Categories</Heading>
       <div className="flex justify-center flex-wrap gap-6">
         {categories.map((category, i) => (

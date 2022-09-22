@@ -18,7 +18,7 @@ const Processors = () => {
   //is any error
   if (error) return toast.error(error.message);
   return (
-    <div>
+    <div className="mt-16">
       <Heading>Processors</Heading>
       <div id="processors" className="flex justify-center gap-6 flex-wrap">
         {processors.map((part, i) => (

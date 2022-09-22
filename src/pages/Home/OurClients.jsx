@@ -23,7 +23,7 @@ const OurClients = () => {
     cssEase: "linear",
   };
   return (
-    <div className="p-16 bg-base-100 mt-20">
+    <div className="px-16 bg-base-100 my-16">
       <Heading>OUR CLIENTS</Heading>
 
       <div>

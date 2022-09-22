@@ -20,7 +20,7 @@ const GraphicsCards = () => {
   //is any error
   if (error) return toast.error(error.message);
   return (
-    <div>
+    <div className="mt-16">
       <Heading>Graphics Cards</Heading>
       <div id="graphics_cards" className="flex justify-center gap-6 flex-wrap">
         {graphicsCards.map((part, i) => (

@@ -2,7 +2,7 @@ import React from "react";
 
 const OfferBanner = () => {
   return (
-    <div className="relative my-6">
+    <div className="relative mt-16">
       <img
         className="min-w-full"
         src="https://i.ibb.co/9w920QF/offer.webp"
