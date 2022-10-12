@@ -13,7 +13,7 @@ import Loading from "../../Shared/Loading";
 const Register = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  let from = location.state?.from?.pathname || "/";
+  let from = location.state?.from?.pathname || "/home";
   // useCreateWith email and pass
   const [createUserWithEmailAndPassword, eUser, eLoading, eError] =
     useCreateUserWithEmailAndPassword(auth);

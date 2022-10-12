@@ -31,14 +31,14 @@ const Navbar = () => {
     >
       {/* first part of navbar ,, logo here */}
       <div className="navbar-start">
-        <a href="#home" className="text-4xl font-[Satisfy] ">
+        <Link to="/home" className="text-4xl font-[Satisfy] ">
           Outtel
-        </a>
+        </Link>
       </div>
 
       {/* middle part of nav bar ,,, navlinks here */}
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal p-0">
+        <ul className="menu menu-horizontal p-0 flex gap-6 uppercase">
           <NavLinks />
         </ul>
       </div>

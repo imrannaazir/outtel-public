@@ -12,7 +12,7 @@ import Loading from "../../Shared/Loading";
 const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  let from = location.state?.from?.pathname || "/";
+  let from = location.state?.from?.pathname || "/home";
   // sign in with email and pass
   const [signInWithEmailAndPassword, eUser, eLoading, eError] =
     useSignInWithEmailAndPassword(auth);

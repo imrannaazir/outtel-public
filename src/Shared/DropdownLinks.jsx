@@ -1,7 +1,7 @@
 import React from 'react';
 import toast from "react-hot-toast"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartPlus, faFan, faGear, faHome, faRightFromBracket, faRocket, faSortUp, faUserEdit, } from '@fortawesome/free-solid-svg-icons';
+import {  faFan, faGear, faHome, faRightFromBracket, faRocket, faSortUp,  } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { HashLink } from 'react-router-hash-link';
