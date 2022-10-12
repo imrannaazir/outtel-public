@@ -25,13 +25,13 @@ const Navbar = () => {
 
   return (
     <div
-      className={`navbar text-base-100 transform duration-200 px-8 ${
+      className={`navbar text-base-100 transform duration-200 px-8 text-lg ${
         nav || "bg-primary"
-      } fixed top-0 z-50 w-[100%]`}
+      } fixed top-0 z-50 w-[100%] border-b border-primary`}
     >
       {/* first part of navbar ,, logo here */}
       <div className="navbar-start">
-        <a href="#home" className="text-2xl">
+        <a href="#home" className="text-4xl font-[Satisfy] ">
           Outtel
         </a>
       </div>
