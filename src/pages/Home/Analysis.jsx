@@ -38,7 +38,7 @@ const Analysis = () => {
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-4 mt-16 ">
       {infos.map((info) => (
-        <>
+        <div key={info.id}>
           <div
             className=" flex flex-col items-center gap-4  m-2 py-6  hover:shadow-xl uppercase bg-white rounded-lg"
             key={info?.id}
@@ -53,7 +53,7 @@ const Analysis = () => {
             </span>
             <p className="text-xl text-black">{info.name}</p>
           </div>
-        </>
+        </div>
       ))}
     </div>
   );

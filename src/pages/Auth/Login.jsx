@@ -40,7 +40,7 @@ const Login = () => {
     navigate(from);
   }
   return (
-    <div className="flex justify-center items-center min-h-screen bg-base-200">
+    <div className="flex justify-center items-center min-h-screen bg-primary">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <img src={loginImage} className="hidden lg:block" alt="login" />
 
