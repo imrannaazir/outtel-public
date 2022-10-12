@@ -14,7 +14,6 @@ const Portfolio = () => {
       <CareerObj />
       <Skills />
       <Projects />
-      <Footer />
     </div>
   );
 };

@@ -5,7 +5,7 @@ const Skills = () => {
   const style2 = { "--value": 70 };
   const style3 = { "--value": 40 };
   return (
-    <div className="card lg:card-side bg-base-100 grid grid-cols-2">
+    <div className="card lg:card-side bg-base-100 grid lg:grid-cols-2">
       <div className="card-body ">
         <div className="flex flex-col gap-8">
           <div className="flex items-center gap-4">

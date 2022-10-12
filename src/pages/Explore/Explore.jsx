@@ -3,6 +3,7 @@ import React from "react";
 import toast from "react-hot-toast";
 import { useQuery } from "react-query";
 import Loading from "../../Shared/Loading";
+import TopBanner from "../../Shared/TopBanner";
 import Heading from "../Home/Heading";
 import Part from "../Home/Part";
 
@@ -17,9 +18,12 @@ const Explore = () => {
   //is any error
   if (error) return toast.error(error?.message);
   return (
-    <div className="mt-16 bg-white">
-      <Heading>new arrivals</Heading>
-      <div id="parts" className="flex justify-center gap-6 flex-wrap">
+    <div className=" bg-white">
+      <TopBanner
+        img="https://storage.googleapis.com/afs-prod/media/afs:Medium:6906200015/775.jpeg"
+        pageName="Explore Our Parts"
+      />
+      <div className="flex justify-center gap-6 flex-wrap my-16">
         {data.map((part, i) => (
           <Part key={i} i={i} part={part} />
         ))}
