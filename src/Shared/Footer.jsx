@@ -3,6 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <div
+      className="bg-primary"
       style={{
         backgroundImage: `url(https://www.nginx.com/nginxconf/wp-content/uploads/Conf2018-background-bottom-desktop-1366x705.png)`,
       }}
