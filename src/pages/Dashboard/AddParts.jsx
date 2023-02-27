@@ -50,7 +50,7 @@ const AddParts = () => {
     // post data to db
     (async function () {
       const { data } = await axios.post(
-        "https://historic-cuyahoga-valley-56137.herokuapp.com/parts",
+        "https://outtel-backend.onrender.com/parts",
         partData
       );
       console.log(data);

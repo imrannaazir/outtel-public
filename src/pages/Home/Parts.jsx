@@ -9,7 +9,7 @@ import Heading from "./Heading";
 const Parts = () => {
   const { isLoading, error, data } = useQuery("partsData", () =>
     axios
-      .get("https://historic-cuyahoga-valley-56137.herokuapp.com/parts")
+      .get("https://outtel-backend.onrender.com/parts")
       .then((res) => res.data)
   );
   const parts = data?.slice(0, 6);

@@ -16,7 +16,7 @@ const Feedback = () => {
   useEffect(() => {
     (async function () {
       const { data } = await axios.get(
-        `https://historic-cuyahoga-valley-56137.herokuapp.com/user-image/${user?.email}`
+        `https://outtel-backend.onrender.com/user-image/${user?.email}`
       );
       setUserIMG(data?.image);
     })();
@@ -44,7 +44,7 @@ const Feedback = () => {
     console.log(newFeedback);
     (async function () {
       const { data } = await axios.post(
-        "https://historic-cuyahoga-valley-56137.herokuapp.com/feedbacks",
+        "https://outtel-backend.onrender.com/feedbacks",
         newFeedback
       );
       console.log(data);

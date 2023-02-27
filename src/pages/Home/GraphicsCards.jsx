@@ -9,9 +9,7 @@ import Heading from "./Heading";
 const GraphicsCards = () => {
   const { isLoading, error, data } = useQuery("graphicsCardsData", () =>
     axios
-      .get(
-        "https://historic-cuyahoga-valley-56137.herokuapp.com/graphics_cards"
-      )
+      .get("https://outtel-backend.onrender.com/graphics_cards")
       .then((res) => res.data)
   );
   const graphicsCards = data?.slice(0, 3);

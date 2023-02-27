@@ -28,7 +28,7 @@ const Purchase = () => {
   useEffect(() => {
     (async function () {
       const { data } = await axios.get(
-        `https://historic-cuyahoga-valley-56137.herokuapp.com/parts/${id.id}`
+        `https://outtel-backend.onrender.com/parts/${id.id}`
       );
       setPart(data[0]);
     })();
@@ -56,7 +56,7 @@ const Purchase = () => {
 
     (async function () {
       const { data } = await axios.post(
-        "https://historic-cuyahoga-valley-56137.herokuapp.com/orders",
+        "https://outtel-backend.onrender.com/orders",
         newOrder
       );
       console.log(data);

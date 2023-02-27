@@ -9,7 +9,7 @@ import Heading from "./Heading";
 const Processors = () => {
   const { isLoading, error, data } = useQuery("processorsData", () =>
     axios
-      .get("https://historic-cuyahoga-valley-56137.herokuapp.com/processors")
+      .get("https://outtel-backend.onrender.com/processors")
       .then((res) => res.data)
   );
   const processors = data?.slice(0, 3);

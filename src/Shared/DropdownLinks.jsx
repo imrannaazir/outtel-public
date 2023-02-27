@@ -107,7 +107,7 @@ const DropdownLinks = ({ user }) => {
           <li className={liStyle}>
             {" "}
             <FontAwesomeIcon className="hover:bg-transparent" icon={faGear} />
-            <Link className="hover:bg-transparent" to="/admin">
+            <Link className="hover:bg-transparent" to="/dashboard">
               Dashboard
             </Link>
           </li>

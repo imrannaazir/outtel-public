@@ -5,7 +5,7 @@ const CancelModal = ({ selectedCancel, refetch }) => {
   const handleCancel = () => {
     (async function () {
       const { data } = await axios.delete(
-        `https://historic-cuyahoga-valley-56137.herokuapp.com/orders/${selectedCancel}`
+        `https://outtel-backend.onrender.com/orders/${selectedCancel}`
       );
       console.log(data);
       refetch();

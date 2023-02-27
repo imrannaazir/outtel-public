@@ -7,7 +7,7 @@ const useAdmin = (user) => {
     const email = user?.email;
     if (email) {
       fetch(
-        `https://historic-cuyahoga-valley-56137.herokuapp.com/admin/${email}`,
+        `https://outtel-backend.onrender.com/admin/${email}`,
         {
           method: "GET",
           headers: {

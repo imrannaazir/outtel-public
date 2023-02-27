@@ -16,7 +16,7 @@ const UpdateProfile = () => {
   useEffect(() => {
     (async function () {
       const { data } = await axios.get(
-        `https://historic-cuyahoga-valley-56137.herokuapp.com/users/${user?.email}`
+        `https://outtel-backend.onrender.com/users/${user?.email}`
       );
       setUserDb(data);
     })();
@@ -70,7 +70,7 @@ const UpdateProfile = () => {
 
     (async function () {
       const { data } = await axios.put(
-        `https://historic-cuyahoga-valley-56137.herokuapp.com/update-users/${user?.email},`,
+        `https://outtel-backend.onrender.com/update-users/${user?.email},`,
         updatedUser
       );
       console.log(data);

@@ -22,7 +22,7 @@ const Reviews = () => {
     data: reviews,
   } = useQuery("reviewData", () =>
     axios
-      .get("https://historic-cuyahoga-valley-56137.herokuapp.com/reviews")
+      .get("https://outtel-backend.onrender.com/reviews")
       .then((res) => res.data)
   );
   //is loading
@@ -34,7 +34,7 @@ const Reviews = () => {
   useEffect(() => {
     (async function () {
       const { data } = await axios.get(
-        "https://historic-cuyahoga-valley-56137.herokuapp.com/reviews"
+        "https://outtel-backend.onrender.com/reviews"
       );
       setReviews(data);
     })();

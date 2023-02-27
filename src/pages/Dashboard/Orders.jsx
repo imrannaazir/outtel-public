@@ -11,14 +11,11 @@ const Orders = () => {
   const [user, loading] = useAuthState(auth);
   const [selectedCancel, setSelectedCancel] = useState("");
   const { isLoading, error, data, refetch } = useQuery("getOrders", () =>
-    axios.get(
-      `https://historic-cuyahoga-valley-56137.herokuapp.com/Orders/${user?.email}`,
-      {
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-      }
-    )
+    axios.get(`https://outtel-backend.onrender.com/Orders/${user?.email}`, {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
   );
 
   //order

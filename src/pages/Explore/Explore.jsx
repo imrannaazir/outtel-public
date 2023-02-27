@@ -10,7 +10,7 @@ import Part from "../Home/Part";
 const Explore = () => {
   const { isLoading, error, data } = useQuery("partsData", () =>
     axios
-      .get("https://historic-cuyahoga-valley-56137.herokuapp.com/parts")
+      .get("https://outtel-backend.onrender.com/parts")
       .then((res) => res?.data)
   );
   //is loading

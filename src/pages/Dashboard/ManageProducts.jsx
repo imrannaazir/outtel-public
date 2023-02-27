@@ -9,7 +9,7 @@ import { useState } from "react";
 const ManageProducts = () => {
   const [selectedPart, setSelectedPart] = useState("");
   const { isLoading, error, data, refetch } = useQuery("partsData", () =>
-    axios.get("https://historic-cuyahoga-valley-56137.herokuapp.com/parts", {
+    axios.get("https://outtel-backend.onrender.com/parts", {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
