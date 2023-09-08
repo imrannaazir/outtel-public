@@ -7,7 +7,7 @@ const Part = ({ part: { image, name, description, price, _id } }) => {
   const navigate = useNavigate();
   return (
     <div
-      data-aos="zoom-in"
+      // data-aos="zoom-in"
       className="group card w-96 bg-base-100 shadow-primary hover:shadow-primary shadow-md hover:shadow-lg "
     >
       <figure>
